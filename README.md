@@ -54,6 +54,9 @@
 6. 上线运营，之后可以登录推啊媒体平台查看数据
 
 ## 技术对接
+
+<img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E5%AF%B9%E6%8E%A5%E7%AE%80%E6%98%93%E8%AF%B4%E6%98%8E.png" alt="激励广告对接简易说明" style="zoom:80%;" />
+
 ### 用户标识接口
 
 #### 接口概述
@@ -62,11 +65,12 @@
 
 #### 时序图
 
-<img src="http://storage.ikyxxs.com/%E6%8E%A8%E5%95%8A%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE.png" alt="推啊媒体API时序图" style="zoom: 33%;" />
+<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE.png" alt="推啊媒体API时序图" style="zoom: 80%;" />
 
 #### 对接文档
 
-[推啊媒体API对接文档2.1.2版.pdf](http://storage.ikyxxs.com/%E6%8E%A8%E5%95%8A%E5%AA%92%E4%BD%93API%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A32.1.2%E7%89%88%EF%BC%88%E7%A7%8D%E7%BA%A2%E5%8C%85%EF%BC%89.pdf)
+[推啊媒体API对接文档](https://github.com/tuia-fed/Tuia-h5-demo)
+
 
 
 
@@ -146,7 +150,7 @@ http://yun.tuisnake.com/h5-mami/h5/parent.html
 
 2. 开发`奖励上报接口`
 
-   在 webview 内实现 native 方法
+   在 WebView 内实现 native 方法
 
 3. 进行`奖励发放`
 
@@ -182,13 +186,35 @@ http://yun.tuisnake.com/h5-mami/h5/parent.html
 |   sign    | String  |    签名    | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Integer |  奖励倍数  |            翻倍奖励会回传该参数表示用户获得的倍数            |
 
+**测试活动**
+
+[活动链接](https://activity.tuia.cn/activity/index?id=15564&slotId=305733&login=normal&appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&dsm=1.305733.0.0&dsm2=1.305733.2.15564&tenter=SOW&subActivityWay=1&tck_rid_6c8=0ad0276bjzwmdbm0-7348142&tck_loc_c5d=tactivity-15564&dcm=401.305733.0.0&&tenter=SOW&specialType=0&userType=2&isTestActivityType=0&visType=0&ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc)
+
+<img src="http://storage.ikyxxs.com/tuia-reward-test-activity.png" alt="tuia-reward-test-activity" style="zoom:50%;" />
+
+
+
+**Android 示例代码**
+
+```java
+mWebView.addJavascriptInterface(new TAHandler(), "TAHandler");
+
+webSetting.setJavaScriptEnabled(true);
+```
+
+<img src="http://storage.ikyxxs.com/tuia-reward-code-android.jpg" alt="tuia-reward-code-android" style="zoom:80%;" />
+
+
+
 **Demo**
 
 - [iOS](http://storage.ikyxxs.com/tuia-reward-demo-ios.zip)
 
-- [Android](http://storage.ikyxxs.com/tuia-reward-demo-android.zip)
+- [Android](https://github.com/tuia-fed/Tuia-h5-demo)
 
 - [前端对接](https://activity.tuia.cn/activity/index?id=15564&slotId=305733&login=normal&appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&dsm=1.305733.0.0&dsm2=1.305733.2.15564&tenter=SOW&subActivityWay=1&tck_rid_6c8=0ad0276bjzwmdbm0-7348142&tck_loc_c5d=tactivity-15564&dcm=401.305733.0.0&&tenter=SOW&specialType=0&userType=2&isTestActivityType=0&visType=0&ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc&)
+
+
 
 
 
@@ -503,3 +529,19 @@ ok
 *A: appKey 和 appSecret 在[推啊媒体平台](https://ssp.tuia.cn)获取，prizeFlag 由媒体自己定义并同步给推啊运营。*
 
 
+
+**Q: 激励视频与投放接口 /index/serving**
+
+*A:需要配置广告位素材可以对接投放接口；也可以不对接投放接口，通过活动链接直接跳转激励视频*
+
+
+
+**Q: 服务端上报需要注意什么**
+
+*A: 媒体自行开发奖励上报接口，奖励上报 url 和 prizeFlag 提供给推啊运营*
+
+
+
+**Q: 激励视频需要媒体上报曝光点击数据吗**
+
+*A: 不需要，由我们自行上报*
