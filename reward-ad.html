@@ -1,0 +1,739 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>激励广告对接文档</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+}
+
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif !important;
+    color: #34495e;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+#write p {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
+}
+
+#write ol li {
+    text-indent: 0.5rem;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+a {
+    color: #42b983;
+    font-weight: 600;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    padding-bottom: .4rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.225;
+    margin: 35px 0 15px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    margin: 20px 0 7px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid #42b983;
+    padding: 10px 15px;
+    color: #777;
+    background-color: rgba(66, 185, 131, .1);
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: #fafafa;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write strong {
+    padding: 0 1px;
+}
+
+#write em {
+    padding: 0 5px 0 2px;
+}
+
+#write table thead th {
+    background-color: #f2f2f2;
+}
+
+#write .CodeMirror-gutters {
+    border-right: none;
+}
+
+#write .md-fences {
+    border: 1px solid #F4F4F4;
+    -webkit-font-smoothing: initial;
+    margin: 0.8rem 0 !important;
+    padding: 0.3rem 0 !important;
+    line-height: 1.43rem;
+    background-color: #F8F8F8 !important;
+    border-radius: 2px;
+    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.85rem;
+    word-wrap: normal;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+}
+
+#write code, tt {
+    margin: 0 2px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+}
+
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
+}
+
+/* heighlight. */
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="激励广告对接文档" class="md-header-anchor"></a><span>激励广告对接文档</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="n2098"><a class="md-toc-inner" href="#激励广告对接文档">激励广告对接文档</a></span><span class="md-toc-item md-toc-h2" data-ref="n2101"><a class="md-toc-inner" href="#修订记录">修订记录</a></span><span class="md-toc-item md-toc-h2" data-ref="n2118"><a class="md-toc-inner" href="#产品介绍">产品介绍</a></span><span class="md-toc-item md-toc-h2" data-ref="n2124"><a class="md-toc-inner" href="#对接流程">对接流程</a></span><span class="md-toc-item md-toc-h2" data-ref="n2138"><a class="md-toc-inner" href="#技术对接">技术对接</a></span><span class="md-toc-item md-toc-h3" data-ref="n2140"><a class="md-toc-inner" href="#用户标识接口">用户标识接口</a></span><span class="md-toc-item md-toc-h4" data-ref="n2141"><a class="md-toc-inner" href="#接口概述">接口概述</a></span><span class="md-toc-item md-toc-h4" data-ref="n2143"><a class="md-toc-inner" href="#时序图">时序图</a></span><span class="md-toc-item md-toc-h4" data-ref="n2145"><a class="md-toc-inner" href="#对接文档">对接文档</a></span><span class="md-toc-item md-toc-h3" data-ref="n2148"><a class="md-toc-inner" href="#奖励上报接口">奖励上报接口</a></span><span class="md-toc-item md-toc-h4" data-ref="n2149"><a class="md-toc-inner" href="#接口概述">接口概述</a></span><span class="md-toc-item md-toc-h4" data-ref="n2152"><a class="md-toc-inner" href="#时序图">时序图</a></span><span class="md-toc-item md-toc-h4" data-ref="n2154"><a class="md-toc-inner" href="#h5前端上报">H5前端上报</a></span><span class="md-toc-item md-toc-h4" data-ref="n2227"><a class="md-toc-inner" href="#客户端上报">客户端上报</a></span><span class="md-toc-item md-toc-h4" data-ref="n2310"><a class="md-toc-inner" href="#服务端上报">服务端上报</a></span><span class="md-toc-item md-toc-h4" data-ref="n2414"><a class="md-toc-inner" href="#签名验证">签名验证</a></span><span class="md-toc-item md-toc-h3" data-ref="n2430"><a class="md-toc-inner" href="#webview-要求">WebView 要求</a></span><span class="md-toc-item md-toc-h4" data-ref="n2431"><a class="md-toc-inner" href="#webview-基础配置">WebView 基础配置</a></span><span class="md-toc-item md-toc-h4" data-ref="n2433"><a class="md-toc-inner" href="#监听-webview下载接口">监听 WebView下载接口</a></span><span class="md-toc-item md-toc-h4" data-ref="n2435"><a class="md-toc-inner" href="#实现下载行为">实现下载行为</a></span><span class="md-toc-item md-toc-h4" data-ref="n2437"><a class="md-toc-inner" href="#实现安装行为">实现安装行为</a></span><span class="md-toc-item md-toc-h3" data-ref="n2447"><a class="md-toc-inner" href="#异常场景查询">异常场景查询</a></span><span class="md-toc-item md-toc-h4" data-ref="n2448"><a class="md-toc-inner" href="#可用视频查询接口">可用视频查询接口</a></span><span class="md-toc-item md-toc-h2" data-ref="n2489"><a class="md-toc-inner" href="#上线准备">上线准备</a></span><span class="md-toc-item md-toc-h2" data-ref="n2494"><a class="md-toc-inner" href="#常见问题">常见问题</a></span></p></div><h2><a name="修订记录" class="md-header-anchor"></a><span>修订记录</span></h2><figure><table><thead><tr><th style='text-align:center;' ><span>编号</span></th><th style='text-align:center;' ><span>修订内容</span></th><th style='text-align:center;' ><span>修订时间</span></th><th style='text-align:center;' ><span>版本</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1</span></td><td style='text-align:center;' ><span>初稿</span></td><td style='text-align:center;' ><span>2019.09.01</span></td><td style='text-align:center;' ><span>1.0</span></td></tr><tr><td style='text-align:center;' ><span>2</span></td><td style='text-align:center;' ><span>简化媒体 API 对接</span></td><td style='text-align:center;' ><span>2019.09.25</span></td><td style='text-align:center;' ><span>1.1</span></td></tr></tbody></table></figure><h2><a name="产品介绍" class="md-header-anchor"></a><span>产品介绍</span></h2><p><strong><span>激励互动</span></strong></p><p><span>用户通过参与活动获得特定奖励</span></p><p><strong><span>激励视频</span></strong></p><p><span>用户通过观看视频获得特定奖励</span></p><p><img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A-%E6%8A%95%E6%94%BE%E6%96%B9%E5%BC%8F.png" alt="激励广告-投放方式" style="zoom:70%;" /></p><h2><a name="对接流程" class="md-header-anchor"></a><span>对接流程</span></h2><ol start='' ><li><span>合作方媒体在推啊媒体平台 (</span><a href='https://ssp.tuia.cn' target='_blank' class='url'>https://ssp.tuia.cn</a><span>) 注册账号</span></li><li><span>创建广告位，在后台获取 appKey、appSecret 等参数</span></li><li><span>客户端开发，集成广告位 url （用户标识接口）</span></li><li><span>开发奖励上报接口、奖励发放逻辑</span></li><li><span>测试联调，上线准备</span></li><li><span>上线运营，之后可以登录推啊媒体平台查看数据</span></li></ol><h2><a name="技术对接" class="md-header-anchor"></a><span>技术对接</span></h2><p><img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E5%AF%B9%E6%8E%A5%E7%AE%80%E6%98%93%E8%AF%B4%E6%98%8E.png" alt="激励广告对接简易说明" style="zoom:80%;" /></p><h3><a name="用户标识接口" class="md-header-anchor"></a><span>用户标识接口</span></h3><h4><a name="接口概述" class="md-header-anchor"></a><span>接口概述</span></h4><p><span>用于推啊识别用户，并在奖励上报时回传，作为奖励发放的对象。</span></p><h4><a name="时序图" class="md-header-anchor"></a><span>时序图</span></h4><p><img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE.png" alt="推啊媒体API时序图" style="zoom: 80%;" /></p><h4><a name="对接文档" class="md-header-anchor"></a><span>对接文档</span></h4><p><a href='http://ikyxxs.com/tuia/media-api.html'><span>推啊媒体API对接文档</span></a></p><p>&nbsp;</p><h3><a name="奖励上报接口" class="md-header-anchor"></a><span>奖励上报接口</span></h3><h4><a name="接口概述" class="md-header-anchor"></a><span>接口概述</span></h4><p><span>用户参与活动获得奖励时，推啊会将奖励上报给媒体，用于媒体后续给用户实际发放奖励。</span></p><p><span>奖励上报需要媒体根据上报类型开发相应的接口。</span></p><h4><a name="时序图" class="md-header-anchor"></a><span>时序图</span></h4><p><img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E4%BA%92%E5%8A%A8%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg" alt="激励互动时序图" style="zoom:70%;" /></p><h4><a name="h5前端上报" class="md-header-anchor"></a><span>H5前端上报</span></h4><p><strong><span>对接流程</span></strong></p><ol start='' ><li><p><span>对接</span><code>用户标识接口</code><span>，并在创建  iframe  时将推啊的投放链接后拼接用户唯一标识</span></p><p><span>iframe 需要添加以下属性 seamless，scrolling=no，mozbrowser，frameborder=0</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 19px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">iframe</span> <span class="cm-variable">seamless</span> <span class="cm-variable">mozbrowser</span> <span class="cm-variable">frameborder</span><span class="cm-operator">=</span><span class="cm-string">"0"</span> <span class="cm-variable">scrolling</span><span class="cm-operator">=</span><span class="cm-string">"no"</span> <span class="cm-variable">style</span><span class="cm-operator">=</span><span class="cm-string">"border:none;"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/iframe&gt;</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 20px;"></div><div class="CodeMirror-gutters" style="display: none; height: 20px;"></div></div></div></pre></li><li><p><span>开发</span><code>奖励上报接口</code></p><p><span>使用 window.addEventListener 监听 message 事件</span></p></li><li><p><span>进行</span><code>奖励发放</code></p><p><span>需要媒体开发 </span><em><span>监听 iframe 页面关闭请求，媒体发放奖励</span></em><span> 的业务逻辑</span></p></li></ol><p><strong><span>接口说明</span></strong></p><ol start='' ><li><p><span>接口依赖 message 事件，请确保 webview 支持该事件</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 19px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">window</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'message'</span>, <span class="cm-keyword">function</span>(<span class="cm-def">e</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// e.data 为返回的参数对象</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 60px;"></div><div class="CodeMirror-gutters" style="display: none; height: 60px;"></div></div></div></pre></li><li><p><span>媒体需要提供奖励标识 (prizeFlag) </span></p></li><li><p><span>如有需要返回按钮需求，判断 type 为 close 的时候对 iframe 作隐藏或销毁即可</span></p></li></ol><p><strong><span>参数说明</span></strong></p><p><span>使用 window.addEventListener 监听 message 事件，将会返回对象包含以下参数：</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>参数</span></th><th style='text-align:center;' ><span>类型</span></th><th style='text-align:center;' ><span>注释</span></th><th style='text-align:center;' ><span>备注</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>type</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>message 类型</span></td><td style='text-align:center;' ><span>reward: 发放奖品, close: 关闭窗口</span></td></tr><tr><td style='text-align:center;' ><span>userId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>用户id</span></td><td style='text-align:center;' ><span>奖励发放的对象，来源于广告位链接中的 &amp;userId=xxx，由媒体拼接提供</span></td></tr><tr><td style='text-align:center;' ><span>timestamp</span></td><td style='text-align:center;' ><span>Number</span></td><td style='text-align:center;' ><span>时间戳</span></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><span>prizeFlag</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>奖励标识</span></td><td style='text-align:center;' ><span>用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励</span></td></tr><tr><td style='text-align:center;' ><span>orderId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>推啊订单号</span></td><td style='text-align:center;' ><span>每次奖励上报唯一，幂等由媒体保障</span></td></tr><tr><td style='text-align:center;' ><span>appKey</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>媒体公钥</span></td><td style='text-align:center;' ><span>用于签名验证，在推啊媒体平台获取</span></td></tr><tr><td style='text-align:center;' ><span>sign</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>签名</span></td><td style='text-align:center;' ><span>通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。</span></td></tr><tr><td style='text-align:center;' ><span>score</span></td><td style='text-align:center;' ><span>Number</span></td><td style='text-align:center;' ><span>奖励倍数</span></td><td style='text-align:center;' ><span>翻倍奖励会回传该参数表示用户获得的倍数</span></td></tr></tbody></table></figure><p><strong><span>Demo</span></strong></p><p><a href='http://yun.tuisnake.com/h5-mami/h5/parent.html' target='_blank' class='url'>http://yun.tuisnake.com/h5-mami/h5/parent.html</a></p><p>&nbsp;</p><h4><a name="客户端上报" class="md-header-anchor"></a><span>客户端上报</span></h4><p><strong><span>对接流程</span></strong></p><ol start='' ><li><p><span>对接</span><code>用户标识接口</code></p></li><li><p><span>开发</span><code>奖励上报接口</code></p><p><span>在 WebView 内实现 native 方法</span></p></li><li><p><span>进行</span><code>奖励发放</code></p><p><span>需要媒体开发 </span><em><span>客户端监听页面关闭请求，媒体发放奖励</span></em><span> 的业务逻辑</span></p></li></ol><p><strong><span>接口说明</span></strong></p><ol start='' ><li><p><span>媒体需要在 webview 内实现 native 方法</span></p><ul><li><p><span>Android 客户端</span></p><p><code>window.TAHandler.reward</code><span>: 发放奖励用，会在奖励发放时调用该接口。</span></p><p><code>window.TAHandler.close</code><span> : 关闭页面用，会在用户点击离开时调用该接口。</span></p></li><li><p><span>iOS 客户端</span></p><p><code>window.TAHandlerReward</code><span> : 发放奖励用，会在奖励发放时调用该接口。</span></p><p><code>window.TAHandlerClose</code><span> : 关闭页面用，会在用户点击离开时调用该接口。</span></p></li></ul></li><li><p><span>媒体需要提供奖励标识 (prizeFlag) </span></p></li><li><p><span>如有需要返回按钮需求，前端在调用 </span><code>window.TAHandler.close</code><span> 或 </span><code>window.TAHandlerClose</code><span> 的时候关闭 webview</span></p></li></ol><p><strong><span>参数说明</span></strong></p><p><code>window.TAHandler.reward(json)</code><span> 或 </span><code>window.TAHandlerReward(json)</code><span> 仅单个参数，为 JSON 类型，包含以下信息：</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>参数</span></th><th style='text-align:center;' ><span>类型</span></th><th style='text-align:center;' ><span>注释</span></th><th style='text-align:center;' ><span>备注</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>userId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>用户id</span></td><td style='text-align:center;' ><span>奖励发放的对象，来源于广告位链接中的 &amp;userId=xxx，由媒体拼接提供</span></td></tr><tr><td style='text-align:center;' ><span>timestamp</span></td><td style='text-align:center;' ><span>Number</span></td><td style='text-align:center;' ><span>时间戳</span></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><span>prizeFlag</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>奖励标识</span></td><td style='text-align:center;' ><span>用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励</span></td></tr><tr><td style='text-align:center;' ><span>orderId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>推啊订单号</span></td><td style='text-align:center;' ><span>每次奖励上报唯一，幂等由媒体保障</span></td></tr><tr><td style='text-align:center;' ><span>appKey</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>媒体公钥</span></td><td style='text-align:center;' ><span>用于签名验证，在推啊媒体平台获取</span></td></tr><tr><td style='text-align:center;' ><span>sign</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>签名</span></td><td style='text-align:center;' ><span>通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。</span></td></tr><tr><td style='text-align:center;' ><span>score</span></td><td style='text-align:center;' ><span>Integer</span></td><td style='text-align:center;' ><span>奖励倍数</span></td><td style='text-align:center;' ><span>翻倍奖励会回传该参数表示用户获得的倍数</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><strong><span>测试活动</span></strong></p><p><a href='https://activity.tuia.cn/activity/index?id=15564&amp;slotId=305733&amp;login=normal&amp;appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&amp;deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&amp;dsm=1.305733.0.0&amp;dsm2=1.305733.2.15564&amp;tenter=SOW&amp;subActivityWay=1&amp;tck_rid_6c8=0ad0276bjzwmdbm0-7348142&amp;tck_loc_c5d=tactivity-15564&amp;dcm=401.305733.0.0&amp;&amp;tenter=SOW&amp;specialType=0&amp;userType=2&amp;isTestActivityType=0&amp;visType=0&amp;ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc'><span>活动链接</span></a></p><p><img src="http://storage.ikyxxs.com/tuia-reward-test-activity.png" alt="tuia-reward-test-activity" style="zoom:50%;" /></p><p>&nbsp;</p><p><strong><span>Android 示例代码</span></strong></p><pre lang="java" class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">mWebView</span>.<span class="cm-variable">addJavascriptInterface</span>(<span class="cm-keyword">new</span> <span class="cm-variable">TAHandler</span>(), <span class="cm-string">"TAHandler"</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 20px;"></div><div class="CodeMirror-gutters" style="display: none; height: 20px;"></div></div></div></pre><p><img src="http://storage.ikyxxs.com/tuia-reward-code-android.jpg" alt="tuia-reward-code-android" style="zoom:80%;" /></p><p>&nbsp;</p><p><strong><span>Demo</span></strong></p><ul><li><a href='http://storage.ikyxxs.com/tuia-reward-demo-ios.zip'><span>iOS</span></a></li><li><a href='http://storage.ikyxxs.com/tuia-reward-demo-android.zip'><span>Android</span></a></li><li><a href='https://activity.tuia.cn/activity/index?id=15564&amp;slotId=305733&amp;login=normal&amp;appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&amp;deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&amp;dsm=1.305733.0.0&amp;dsm2=1.305733.2.15564&amp;tenter=SOW&amp;subActivityWay=1&amp;tck_rid_6c8=0ad0276bjzwmdbm0-7348142&amp;tck_loc_c5d=tactivity-15564&amp;dcm=401.305733.0.0&amp;&amp;tenter=SOW&amp;specialType=0&amp;userType=2&amp;isTestActivityType=0&amp;visType=0&amp;ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc&amp;'><span>前端对接</span></a></li></ul><p>&nbsp;</p><h4><a name="服务端上报" class="md-header-anchor"></a><span>服务端上报</span></h4><p><strong><span>对接流程</span></strong></p><ol start='' ><li><p><span>对接</span><code>用户标识接口</code></p></li><li><p><span>开发</span><code>奖励上报接口</code></p><p><span>接口要求如下表</span></p></li><li><p><span>进行</span><code>奖励发放</code></p><p><span>需要媒体开发 </span><em><span>客户端监听页面关闭请求，媒体发放奖励</span></em><span> 的业务逻辑</span></p></li></ol><p><strong><span>接口说明</span></strong></p><p><span>媒体根据要求开发接口，用户获得奖励后，推啊服务器会调用该接口给媒体上报奖励。</span></p><p><img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E4%BA%92%E5%8A%A8%E5%90%8E%E7%AB%AF%E4%B8%8A%E6%8A%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="激励互动后端上报流程图" style="zoom: 67%;" /></p><p>&nbsp;</p><p><strong><span>接口描述</span></strong></p><figure><table><thead><tr><th style='text-align:center;' ><span>请求方式</span></th><th style='text-align:center;' ><span>Content-Type</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>POST</span></td><td style='text-align:center;' ><span>application/x-www-form-urlencoded</span></td></tr></tbody></table></figure><p><strong><span>参数说明</span></strong></p><figure><table><thead><tr><th style='text-align:center;' ><span>参数</span></th><th style='text-align:center;' ><span>类型</span></th><th style='text-align:center;' ><span>必传</span></th><th style='text-align:center;' ><span>注释</span></th><th style='text-align:center;' ><span>备注</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>userId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>用户id</span></td><td style='text-align:center;' ><span>奖励发放的对象，来源于广告位链接中的 &amp;userId=xxx，由媒体拼接提供</span></td></tr><tr><td style='text-align:center;' ><span>timestamp</span></td><td style='text-align:center;' ><span>Long</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>时间戳</span></td><td style='text-align:center;' ><span>毫秒</span></td></tr><tr><td style='text-align:center;' ><span>prizeFlag</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>奖励标识</span></td><td style='text-align:center;' ><span>用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励</span></td></tr><tr><td style='text-align:center;' ><span>orderId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>推啊订单号</span></td><td style='text-align:center;' ><span>每次奖励上报唯一，幂等由媒体保障</span></td></tr><tr><td style='text-align:center;' ><span>appKey</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>媒体公钥</span></td><td style='text-align:center;' ><span>用于签名验证，在推啊媒体平台获取</span></td></tr><tr><td style='text-align:center;' ><span>sign</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>签名</span></td><td style='text-align:center;' ><span>通过签名验证保障接口调用安全性。签名的生成及验证参考《签名验证》章节。</span></td></tr><tr><td style='text-align:center;' ><span>score</span></td><td style='text-align:center;' ><span>Integer</span></td><td style='text-align:center;' ><span>否</span></td><td style='text-align:center;' ><span>奖励倍数</span></td><td style='text-align:center;' ><span>翻倍奖励会回传该参数表示用户获得的倍数</span></td></tr></tbody></table></figure><p><strong><span>响应说明</span></strong></p><figure><table><thead><tr><th style='text-align:center;' ><span>参数</span></th><th style='text-align:center;' ><span>类型</span></th><th style='text-align:center;' ><span>必传</span></th><th style='text-align:center;' ><span>注释</span></th><th style='text-align:center;' ><span>说明</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>code</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>&quot;0&quot;: 成功，&quot;其他数字&quot;: 奖励上报异常</span></td><td style='text-align:center;' ><span>该参数必须为 String 类型</span></td></tr><tr><td style='text-align:center;' ><span>msg</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>奖励上报失败的错误信息</span></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><span>orderId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>推啊订单号</span></td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><p><strong><span>响应示例</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="json"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="json"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string cm-property">"code"</span>: <span class="cm-string">"0"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string cm-property">"msg"</span>: <span class="cm-string">"成功"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string cm-property">"orderId"</span>: <span class="cm-string">"12345678123"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 101px;"></div><div class="CodeMirror-gutters" style="display: none; height: 101px;"></div></div></div></pre><p><strong><span>超时重试</span></strong></p><p><span>奖励上报 2 秒超时无响应时，会进入重试补偿机制，重试间隔策略为 30s、60s、120s，重试次数为 3 次。</span></p><p>&nbsp;</p><h4><a name="签名验证" class="md-header-anchor"></a><span>签名验证</span></h4><p><span>为了保障接口调用的安全性，防止调用时参数被篡改，媒体接收到奖励上报时，需要先对接口的签名进行验证。以保证请求来自推啊合法的接口调用。</span></p><p><strong><span>签名源数据及顺序</span></strong>
+<code>timestamp</code><span>、</span><code>prizeFlag</code><span>、</span><code>orderId</code><span>、</span><code>appKey</code><span>、</span><code>appSecret</code></p><p><code>appSecret</code><span> 为媒体私钥，通过推啊媒体平台获取</span></p><p><span>签名算法为 </span><code>MD5</code></p><p><strong><span>签名示例代码</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">StringBuilder</span> <span class="cm-variable">sb</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">StringBuilder</span>();</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">timestamp</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//时间戳</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">prizeFlag</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//奖励标识</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">orderId</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//订单号</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">appKey</span>);<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//媒体公钥</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">appSecret</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//媒体私钥</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">try</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">DigestUtils</span>.<span class="cm-variable">md5Hex</span>(<span class="cm-variable">sb</span>.<span class="cm-variable">toString</span>().<span class="cm-variable">getBytes</span>(<span class="cm-variable">Charset</span>.<span class="cm-variable">forName</span>(<span class="cm-string">"UTF-8"</span>)));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">} <span class="cm-keyword">catch</span> (<span class="cm-variable">NoSuchAlgorithmException</span> <span class="cm-operator">|</span> <span class="cm-variable">UnsupportedEncodingException</span> <span class="cm-variable">e</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-variable">log</span>.<span class="cm-variable">warn</span>(<span class="cm-string">"推啊激励奖励上报签名异常 msg={}"</span>, <span class="cm-variable">e</span>.<span class="cm-variable">getMessage</span>(), <span class="cm-variable">e</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-keyword">return</span> <span class="cm-atom">null</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 268px;"></div><div class="CodeMirror-gutters" style="display: none; height: 268px;"></div></div></div></pre><p><strong><span>验证请求</span></strong></p><p><span>请求验证分为时效性验证和签名验证，验证通过再发放奖励</span></p><p><strong><span>时效性验证</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Date</span> <span class="cm-variable">date</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">try</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-variable">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-3">Long</span>.<span class="cm-variable">valueOf</span>(<span class="cm-variable">timestamp</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">} <span class="cm-keyword">catch</span> (<span class="cm-variable">Exception</span> <span class="cm-variable">e</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-atom">false</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// 5分钟失效</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">return</span> <span class="cm-variable">date</span>.<span class="cm-variable">after</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>().<span class="cm-variable">getTime</span>() <span class="cm-operator">-</span> <span class="cm-number">5</span> <span class="cm-operator">*</span> <span class="cm-number">60</span> <span class="cm-operator">*</span> <span class="cm-number">1000L</span>));</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 201px;"></div><div class="CodeMirror-gutters" style="display: none; height: 201px;"></div></div></div></pre><p><strong><span>签名验证</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="page-break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">签名验证：</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">StringBuilder</span> <span class="cm-variable">sb</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">StringBuilder</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">timestamp</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//时间戳</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">prizeFlag</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//奖励标识</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">orderId</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//订单号</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">appKey</span>);<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//媒体公钥</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sb</span>.<span class="cm-variable">append</span>(<span class="cm-variable">appSecret</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">//媒体私钥</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">try</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">sign</span> <span class="cm-operator">=</span> <span class="cm-variable">DigestUtils</span>.<span class="cm-variable">md5Hex</span>(<span class="cm-variable">sb</span>.<span class="cm-variable">toString</span>().<span class="cm-variable">getBytes</span>(<span class="cm-variable">Charset</span>.<span class="cm-variable">forName</span>(<span class="cm-string">"UTF-8"</span>)));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">Objects</span>.<span class="cm-variable">equals</span>(<span class="cm-variable">req</span>.<span class="cm-variable">getSign</span>(), <span class="cm-variable">sign</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">} <span class="cm-keyword">catch</span> (<span class="cm-variable">NoSuchAlgorithmException</span> <span class="cm-operator">|</span> <span class="cm-variable">UnsupportedEncodingException</span> <span class="cm-variable">e</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">  </span> &nbsp;<span class="cm-variable">log</span>.<span class="cm-variable">warn</span>(<span class="cm-string">"推啊激励奖励上报签名验证异常 msg={}"</span>,<span class="cm-variable">e</span>.<span class="cm-variable">getMessage</span>(),<span class="cm-variable">e</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">return</span> <span class="cm-atom">false</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 347px;"></div><div class="CodeMirror-gutters" style="display: none; height: 347px;"></div></div></div></pre><p><strong><span>MD5 依赖包</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="xml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">dependency</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span>commons-codec<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">groupId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span>commons-codec<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">artifactId</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">version</span><span class="cm-tag cm-bracket">&gt;</span>1.13<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">version</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">dependency</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 100px;"></div><div class="CodeMirror-gutters" style="display: none; height: 100px;"></div></div></div></pre><p>&nbsp;</p><h3><a name="webview-要求" class="md-header-anchor"></a><span>WebView 要求</span></h3><h4><a name="webview-基础配置" class="md-header-anchor"></a><span>WebView 基础配置</span></h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="page-break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">WebSettings</span> <span class="cm-variable">webSetting</span> <span class="cm-operator">=</span> <span class="cm-variable">mWebView</span>.<span class="cm-variable">getSettings</span>();</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setJavaScriptEnabled</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setJavaScriptCanOpenWindowsAutomatically</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setAllowFileAccess</span>(<span class="cm-atom">false</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setLayoutAlgorithm</span>(<span class="cm-variable">WebSettings</span>.<span class="cm-variable">LayoutAlgorithm</span>.<span class="cm-variable">NARROW_COLUMNS</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setSupportZoom</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setBuiltInZoomControls</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setUseWideViewPort</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setLoadWithOverviewMode</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setAppCacheEnabled</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setDatabaseEnabled</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setDomStorageEnabled</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setGeolocationEnabled</span>(<span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">//必加（不加会影响广告加载）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> (<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION</span>.<span class="cm-variable">SDK_INT</span> <span class="cm-operator">&gt;=</span> <span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">JELLY_BEAN_MR1</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">webSetting</span>.<span class="cm-variable">setMediaPlaybackRequiresUserGesture</span>(<span class="cm-atom">false</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setAppCacheMaxSize</span>(<span class="cm-variable-3">Long</span>.<span class="cm-variable">MAX_VALUE</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setPluginState</span>(<span class="cm-variable">WebSettings</span>.<span class="cm-variable">PluginState</span>.<span class="cm-variable">ON_DEMAND</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setRenderPriority</span>(<span class="cm-variable">WebSettings</span>.<span class="cm-variable">RenderPriority</span>.<span class="cm-variable">HIGH</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">webSetting</span>.<span class="cm-variable">setCacheMode</span>(<span class="cm-variable">WebSettings</span>.<span class="cm-variable">LOAD_DEFAULT</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> (<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION</span>.<span class="cm-variable">SDK_INT</span> <span class="cm-operator">&gt;=</span> <span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">LOLLIPOP</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">webSetting</span>.<span class="cm-variable">setMixedContentMode</span>(<span class="cm-variable">WebSettings</span>.<span class="cm-variable">MIXED_CONTENT_ALWAYS_ALLOW</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 480px;"></div><div class="CodeMirror-gutters" style="display: none; height: 480px;"></div></div></div></pre><h4><a name="监听-webview下载接口" class="md-header-anchor"></a><span>监听 WebView下载接口</span></h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">mWebView</span>.<span class="cm-variable">setDownloadListener</span>(<span class="cm-keyword">new</span> <span class="cm-variable">DownloadListener</span>() {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Override</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">onDownloadStart</span>(<span class="cm-variable-3">String</span> <span class="cm-variable">url</span>, <span class="cm-variable-3">String</span> <span class="cm-variable">userAgent</span>, <span class="cm-variable-3">String</span> <span class="cm-variable">contentDisposition</span>, <span class="cm-variable-3">String</span> <span class="cm-variable">mimetype</span>, <span class="cm-variable-3">long</span> <span class="cm-variable">contentLength</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 120px;"></div><div class="CodeMirror-gutters" style="display: none; height: 120px;"></div></div></div></pre><h4><a name="实现下载行为" class="md-header-anchor"></a><span>实现下载行为</span></h4><p><span>参考 okdownload 下载框架或者自己实现下载器</span>
+<a href='https://github.com/lingochamp/okdownload/blob/master/README-zh.md' target='_blank' class='url'>https://github.com/lingochamp/okdownload/blob/master/README-zh.md</a></p><h4><a name="实现安装行为" class="md-header-anchor"></a><span>实现安装行为</span></h4><p><code>适配 Android 7.0 及以上</code>
+<strong><span>新建 UpdateFileProvider 类继承 FileProvider</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">UpdateFileProvider</span> <span class="cm-keyword">extends</span> <span class="cm-variable">FileProvider</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 60px;"></div><div class="CodeMirror-gutters" style="display: none; height: 60px;"></div></div></div></pre><p><strong><span>AndroidManifest.xml 配置 provider</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="xml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">provider</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-attribute">android:name</span>=<span class="cm-string">"com.lechuan.midunovel.view.UpdateFileProvider"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-attribute">android:authorities</span>=<span class="cm-string">"${applicationId}.updatefileprovider"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-attribute">android:exported</span>=<span class="cm-string">"false"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-attribute">android:grantUriPermissions</span>=<span class="cm-string">"true"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">meta-data</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-attribute">android:name</span>=<span class="cm-string">"android.support.FILE_PROVIDER_PATHS"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-attribute">android:resource</span>=<span class="cm-string">"@xml/update_cache_path"</span><span class="cm-tag cm-bracket">/&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">provider</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 180px;"></div><div class="CodeMirror-gutters" style="display: none; height: 180px;"></div></div></div></pre><p><strong><span>在 xml 文件下新建 update_cache_path.xml</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml" style="page-break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="xml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">&lt;?xml</span> <span class="cm-meta">version="1.0" encoding="utf-8"?&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;!--</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ Copyright 2016 czy1121</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ Licensed under the Apache License, Version 2.0 (the "License");</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ you may not use this file except in compliance with the License.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ You may obtain a copy of the License at</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ &nbsp;  http://www.apache.org/licenses/LICENSE-2.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ Unless required by applicable law or agreed to in writing, software</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ distributed under the License is distributed on an "AS IS" BASIS,</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ See the License for the specific language governing permissions and</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">~ limitations under the License.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">--&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">paths</span> <span class="cm-attribute">xmlns:android</span>=<span class="cm-string">"http://schemas.android.com/apk/res/android"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">external-cache-path</span> <span class="cm-attribute">name</span>=<span class="cm-string">"update_cache"</span> <span class="cm-attribute">path</span>=<span class="cm-string">""</span><span class="cm-tag cm-bracket">/&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">paths</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 400px;"></div><div class="CodeMirror-gutters" style="display: none; height: 400px;"></div></div></div></pre><p><strong><span>下载完成后直接打开下载的文件</span></strong></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="page-break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-variable-3">void</span> <span class="cm-def">openFile</span>(<span class="cm-variable">Context</span> <span class="cm-variable">mContext</span>, <span class="cm-variable">File</span> <span class="cm-variable">f</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Intent</span> <span class="cm-variable">intent</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Intent</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">setAction</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">ACTION_VIEW</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION</span>.<span class="cm-variable">SDK_INT</span> <span class="cm-operator">&lt;</span> <span class="cm-number">24</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">/* 调用getMIMEType()来取得MimeType */</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">String</span> <span class="cm-variable">type</span> <span class="cm-operator">=</span> <span class="cm-string">"application/vnd.android.package-archive"</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">/* 设置intent的file与MimeType */</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">putExtra</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">EXTRA_NOT_UNKNOWN_SOURCE</span>, <span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">putExtra</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">EXTRA_RETURN_RESULT</span>, <span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">setDataAndType</span>(<span class="cm-variable">Uri</span>.<span class="cm-variable">fromFile</span>(<span class="cm-variable">f</span>), <span class="cm-variable">type</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">Uri</span> <span class="cm-variable">uri</span> <span class="cm-operator">=</span> <span class="cm-variable">FileProvider</span>.<span class="cm-variable">getUriForFile</span>(<span class="cm-variable">mContext</span>, <span class="cm-variable">mContext</span>.<span class="cm-variable">getPackageName</span>() <span class="cm-operator">+</span> <span class="cm-string">".Updatefileprovider"</span>, <span class="cm-variable">f</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">setDataAndType</span>(<span class="cm-variable">uri</span>, <span class="cm-string">"application/vnd.android.package-archive"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">putExtra</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">EXTRA_NOT_UNKNOWN_SOURCE</span>, <span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">putExtra</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">EXTRA_RETURN_RESULT</span>, <span class="cm-atom">true</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">addFlags</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">FLAG_GRANT_READ_URI_PERMISSION</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">intent</span>.<span class="cm-variable">addFlags</span>(<span class="cm-variable">Intent</span>.<span class="cm-variable">FLAG_ACTIVITY_NEW_TASK</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">mContext</span>.<span class="cm-variable">startActivity</span>(<span class="cm-variable">intent</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 420px;"></div><div class="CodeMirror-gutters" style="display: none; height: 420px;"></div></div></div></pre><p>&nbsp;</p><h3><a name="异常场景查询" class="md-header-anchor"></a><span>异常场景查询</span></h3><h4><a name="可用视频查询接口" class="md-header-anchor"></a><span>可用视频查询接口</span></h4><p><strong><span>接口描述</span></strong></p><p><span>媒体用户是否有可用视频查询接口</span></p><p><strong><span>请求URL</span></strong></p><p><a href='https://ecb.playpangu.com/video/fillAble' target='_blank' class='url'>https://ecb.playpangu.com/video/fillAble</a></p><p><strong><span>请求方式</span></strong></p><p><span>GET</span></p><p><strong><span>参数说明</span></strong></p><figure><table><thead><tr><th style='text-align:center;' ><span>参数</span></th><th style='text-align:center;' ><span>类型</span></th><th style='text-align:center;' ><span>必传</span></th><th style='text-align:center;' ><span>说明</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>appKey</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>用户id</span></td></tr><tr><td style='text-align:center;' ><span>slotId</span></td><td style='text-align:center;' ><span>Long</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>媒体广告位</span></td></tr><tr><td style='text-align:center;' ><span>deviceId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>是</span></td><td style='text-align:center;' ><span>用户的设备信息</span></td></tr><tr><td style='text-align:center;' ><span>userId</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>否</span></td><td style='text-align:center;' ><span>用户在媒体的唯一识别信息</span></td></tr><tr><td style='text-align:center;' ><span>ip</span></td><td style='text-align:center;' ><span>String</span></td><td style='text-align:center;' ><span>否</span></td><td style='text-align:center;' ><span>用户ip</span></td></tr></tbody></table></figure><p><strong><span>响应说明</span></strong>
+<span>成功返回 ok, 失败无返回</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">ok</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 20px;"></div><div class="CodeMirror-gutters" style="display: none; height: 20px;"></div></div></div></pre><h2><a name="上线准备" class="md-header-anchor"></a><span>上线准备</span></h2><ul><li><p><strong><span>激励广告上线对接表</span></strong></p><p><a href='http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%BA%BF%E5%AF%B9%E6%8E%A5%E8%A1%A8.docx'><span>点击下载</span></a><span>，上线前至少提前半天给到推啊，用于奖励配置、素材准备等</span></p></li></ul><h2><a name="常见问题" class="md-header-anchor"></a><span>常见问题</span></h2><p><strong><span>Q: 怎么获取 appKey、appSecret、prizeFlag 等参数？</span></strong></p><p><em><span>A: appKey 和 appSecret 在</span><a href='https://ssp.tuia.cn'><span>推啊媒体平台</span></a><span>获取，prizeFlag 由媒体自己定义并同步给推啊运营。</span></em></p><p>&nbsp;</p><p><strong><span>Q:激励视频与投放接口 /index/serving</span></strong></p><p><em><span>A:需要配置广告位素材可以对接投放接口；也可以不对接投放接口，通过投放链接直接跳转激励视频</span></em></p><p>&nbsp;</p><p><strong><span>Q:服务端上报需要注意什么</span></strong></p><p><em><span>A:媒体自行开发奖励上报接口，奖励上报 url 和 prizeFlag 提供给推啊运营</span></em></p><p>&nbsp;</p><p><strong><span>Q:激励视频需要媒体上报曝光点击数据吗</span></strong></p><p><em><span>A:不需要，由我们自行上报</span></em></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+</body>
+</html>
