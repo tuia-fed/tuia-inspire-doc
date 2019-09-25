@@ -69,7 +69,7 @@
 
 #### 对接文档
 
-[推啊媒体API对接文档](https://github.com/tuia-fed/Tuia-h5-demo)
+[推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
 
 
 
@@ -158,13 +158,13 @@ http://yun.tuisnake.com/h5-mami/h5/parent.html
 
 **接口说明**
 
-1. 媒体需要在 webview 内实现 native 方法
-   - 安卓客户端
+1. 媒体需要在 WebView 内实现 native 方法
+   - Android 客户端
      
      `window.TAHandler.reward`: 发放奖励用，会在奖励发放时调用该接口。
      
      `window.TAHandler.close` : 关闭页面用，会在用户点击离开时调用该接口。
-   - iOS客户端
+   - iOS 客户端
      
      `window.TAHandlerReward` : 发放奖励用，会在奖励发放时调用该接口。
      
