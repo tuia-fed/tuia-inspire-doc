@@ -1,6 +1,17 @@
 #  推啊媒体API对接文档
 
-[TOC]
+* [概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#概述)
+* [对接价值](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#对接价值)
+* [对接流程](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#对接流程)
+* [对接原理](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#对接原理)
+* [对接步骤](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#对接步骤)
+   * [第1步：获取信息](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第1步获取信息)
+   * [第2步：处理参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第2步处理参数)
+   * [第3步：生成签名](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第3步生成签名)
+   * [第4步：拼接参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第4步拼接参数)
+   * [第5步：活动链接拼接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第5步活动链接拼接)
+* [特别注意](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#特别注意)
+
 
 ## 概述
 
@@ -157,8 +168,8 @@ signature 结果为 2c844779cea811c82ef 679d9caa91203a02fc9aa
 **特别注意：md 用于签名时要先⽤ gzip 压缩，然后⽤ base64 编码，不要进⾏ url_encode 编码。且 gzip 后返回字节数  组，不要返回字符串**
 
 另：
-1）合作方的 appSecret，登录推啊媒体平台（https://ssp.tuia.cn）获取；
-2）验签方式：推啊服务器收到请求后，会自动校验 signature 是否来⾃于授信合作⽅。
+1. 合作方的 appSecret，登录推啊媒体平台（ https://ssp.tuia.cn ）获取；
+2. 验签方式：推啊服务器收到请求后，会自动校验 signature 是否来⾃于授信合作⽅。
 
 
 
