@@ -40,3 +40,7 @@ TAIsdk.init({
 > 步骤三：展示激励活动页面
 
 在需要展示激励活动页面的时候，调用TAIsdk.show()
+
+> 测试链接
+
+[测试链接](http://yun.dui88.com/h5-mami/inspire/test/index.html)
