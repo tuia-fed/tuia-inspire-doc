@@ -115,7 +115,8 @@
 
   ```javascript
   window.addEventListener('message', function(e) {
-      // e.data 为返回的参数对象
+    let data = JSON.parse(e.data)
+      // data 为返回的参数对象
   });
   ```
   
@@ -126,7 +127,7 @@
 
 **参数说明**
 
-使用 window.addEventListener 监听 message 事件，将会返回对象包含以下参数：
+使用 window.addEventListener 监听 message 事件，将会返回序列化对象包含以下参数：
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
