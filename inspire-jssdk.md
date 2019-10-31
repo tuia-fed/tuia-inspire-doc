@@ -8,7 +8,7 @@
 
 > 步骤一：引入 JS 文件
 
-在需要初始化 JS 的页面上引入如下 JS 文件，(支持 https): https://yun.duiba.com.cn/h5-mami/inspire/v1/inspire.min.js
+在需要初始化 JS 的页面上引入如下 JS 文件，(支持 https): https://yun.duiba.com.cn/h5-mami/inspire/v1.1/inspire.min.js
 
 > 步骤二：通过 init 接口初始化
 
