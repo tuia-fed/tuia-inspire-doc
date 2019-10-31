@@ -1,29 +1,29 @@
 # 激励广告对接文档
 
-* [修订记录](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#修订记录)
-* [产品介绍](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#产品介绍)
-* [对接流程](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#对接流程)
-* [技术对接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#技术对接)
-   * [用户标识接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#用户标识接口)
-      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#接口概述)
-      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#时序图)
-      * [对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#对接文档)
-   * [奖励上报接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#奖励上报接口)
-      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#接口概述-1)
-      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#时序图-1)
-      * [H5前端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#H5前端上报)
-      * [客户端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#客户端上报)
-      * [服务端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#服务端上报)
-      * [签名验证](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#签名验证)
-   * [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
-      * [WebView 基础配置](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-基础配置)
-      * [监听 WebView 下载接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#监听-webview-下载接口)
-      * [实现下载行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#实现下载行为)
-      * [实现安装行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#实现安装行为)
-   * [异常场景查询](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#异常场景查询)
-      * [可用视频查询接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#可用视频查询接口)
-* [上线准备](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#上线准备)
-* [常见问题](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#常见问题)
+* [修订记录](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#修订记录)
+* [产品介绍](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#产品介绍)
+* [对接流程](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#对接流程)
+* [技术对接](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#技术对接)
+   * [用户标识接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#用户标识接口)
+      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#接口概述)
+      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#时序图)
+      * [对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#对接文档)
+   * [奖励上报接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#奖励上报接口)
+      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#接口概述-1)
+      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#时序图-1)
+      * [H5前端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#H5前端上报)
+      * [客户端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#客户端上报)
+      * [服务端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#服务端上报)
+      * [签名验证](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#签名验证)
+   * [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#webview-要求)
+      * [WebView 基础配置](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#webview-基础配置)
+      * [监听 WebView 下载接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#监听-webview-下载接口)
+      * [实现下载行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#实现下载行为)
+      * [实现安装行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#实现安装行为)
+   * [异常场景查询](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#异常场景查询)
+      * [可用视频查询接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#可用视频查询接口)
+* [上线准备](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#上线准备)
+* [常见问题](https://github.com/tuia-fed/tuia-inspire-doc/blob/inspire-jssdk/README.md#常见问题)
 
 
 ## 修订记录
@@ -32,6 +32,7 @@
 | :--: | :---------------: | :--------: | :--: |
 |  1   |       初稿        | 2019.09.01 | 1.0  |
 |  2   | 简化媒体 API 对接 | 2019.09.25 | 1.1  |
+|  3   | 增加 JS-SDK 对接  | 2019.10.31 | 1.2  |
 
 
 
@@ -58,13 +59,14 @@
 
 ## 技术对接
 
-<img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E5%AF%B9%E6%8E%A5%E7%AE%80%E6%98%93%E8%AF%B4%E6%98%8E.png" alt="激励广告对接简易说明" style="zoom:80%;" />
+<img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E5%AF%B9%E6%8E%A5%E7%AE%80%E6%98%93%E8%AF%B4%E6%98%8E-2.png" alt="激励广告对接简易说明" style="zoom:80%;" />
 
 ### 用户标识接口
 
 #### 接口概述
 
 用于推啊识别用户，并在奖励上报时回传，作为奖励发放的对象。
+*注：对接 JS-SDK 可以略过这步。*
 
 #### 时序图
 
@@ -93,55 +95,66 @@
 
 **对接流程**
 
-1. 对接`用户标识接口`，并在创建  iframe  时将推啊的投放链接后拼接用户唯一标识
+1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件。
 
-   iframe 需要添加以下属性 seamless，scrolling=no，mozbrowser，frameborder=0
-   
-   ```javascript
-   <iframe seamless mozbrowser frameborder="0" scrolling="no" style="border:none;"></iframe>
-   ```
+    https://yun.duiba.com.cn/h5-mami/inspire/v1.1/inspire.min.js
 
-2. 开发`奖励上报接口`
+2. 通过 init 接口初始化
+    如果需要使用 JS 的方法，使用的页面必须先初始化，否则将无法调用（请使用合法的有效参数）
+    ```javascript
+    TAIsdk.init({
+      appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+      slotId: '299012',
+      deviceId: '867780021912345',
+      userId: '123456',
+      rewardCallback: reward,
+      closeCallback: close,
+      debug: false,
+    })
+    ```
+| 参数名 | 必填 | 类型   | 示例值    | 描述               |
+| ------ | :--: | ------ | --------- | ------------------ |
+| appKey |  是  | string | 'kEzAJT4iRMMag29Z7yWcJGfcVgG' | 系统分配 （推啊后台-我的媒体 获取appkey） |
+| slotId |  是  | string | '299012' | 系统分配的广告位Id （ 推啊后台-我的广告位 获取 slotId） |
+| deviceId |  是  | string | '867780021912345' | 设备信息，用于识别用户，提高广告精准投放度，获取不到 IMEI/IDFA 可以传媒体自定义的参数 |
+| userId |  是  | string | '123456' | 媒体用户id，奖励发放的对象 |
+| rewardCallback |  是  | function |  | 上报成功后会执行的回调函数，会将对应上报数据传过来， |
+| closeCallback |  否  | function |  | 关闭页面后会执行的回调函数 |
+| debug |  否  | boolean | false | 是否开启 debug 模式 |
 
-   使用 window.addEventListener 监听 message 事件
-   
-3. 进行`奖励发放`
-
-   需要媒体开发 *监听 iframe 页面关闭请求，媒体发放奖励* 的业务逻辑
-
-**接口说明**
-
-1. 接口依赖 message 事件，请确保 webview 支持该事件
+3. 奖励和关闭回调 function 实现
 
   ```javascript
-  window.addEventListener('message', function(e) {
-      // e.data 为返回的参数对象
-  });
+  rewardCallback: function(res) {
+      console.log(res)
+      console.log('奖励上报回调')
+      // TODO 奖励上报逻辑
+  },
+  closeCallback: function() {
+      console.log('关闭回调')
+      // TODO 页面关闭逻辑
+  }
   ```
   
-2. 媒体需要提供奖励标识 (prizeFlag) 
-
-3. 如有需要返回按钮需求，判断 type 为 close 的时候对 iframe 作隐藏或销毁即可
-
-
-**参数说明**
-
-使用 window.addEventListener 监听 message 事件，将会返回对象包含以下参数：
+  res 是一个 Object 包含以下参数：
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
 |   type    | String | message 类型 |              reward: 发放奖品, close: 关闭窗口               |
 |  userId   | String |    用户id    | 奖励发放的对象，来源于广告位链接中的 &userId=xxx，由媒体拼接提供 |
 | timestamp | Number |    时间戳    |                                                              |
-| prizeFlag | String |   奖励标识   | 用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励 |
+| prizeFlag | String |   奖励标识   | 默认 "default"。如果媒体需要发放多种奖励，可以根据奖励类型定义不同的奖励标识，并同步给推啊运营配置奖励 |
 |  orderId  | String |  推啊订单号  |               每次奖励上报唯一，幂等由媒体保障               |
 |  appKey   | String |   媒体公钥   |               用于签名验证，在推啊媒体平台获取               |
 |   sign    | String |     签名     | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
+4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
+5. 支持下载和安装，参考 ` WebView要求`。
 
-**Demo**
 
-http://yun.tuisnake.com/h5-mami/h5/parent.html
+**测试链接**
+
+http://yun.dui88.com/h5-mami/inspire/test/index.html
 
 
 
@@ -172,8 +185,8 @@ http://yun.tuisnake.com/h5-mami/h5/parent.html
      `window.TAHandlerReward` : 发放奖励用，会在奖励发放时调用该接口。
      
      `window.TAHandlerClose` : 关闭页面用，会在用户点击离开时调用该接口。
-2. 媒体需要提供奖励标识(prizeFlag) 
-3. 如有需要返回按钮需求，前端在调用 `window.TAHandler.close` 或 `window.TAHandlerClose` 的时候关闭 webview
+2. 媒体需要提供奖励标识 (prizeFlag) 
+3. 如有需要返回按钮需求，前端在调用 `window.TAHandler.close` 或 `window.TAHandlerClose` 的时候关闭 WebView
 
 **参数说明**
 
@@ -183,7 +196,7 @@ http://yun.tuisnake.com/h5-mami/h5/parent.html
 | :-------: | :-----: | :--------: | :----------------------------------------------------------: |
 |  userId   | String  |   用户id   | 奖励发放的对象，来源于广告位链接中的 &userId=xxx，由媒体拼接提供 |
 | timestamp | Number  |   时间戳   |                                                              |
-| prizeFlag | String  |  奖励标识  | 用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励 |
+| prizeFlag | String  |  奖励标识  | 默认 "default"。如果媒体需要发放多种奖励，可以根据奖励类型定义不同的奖励标识，并同步给推啊运营配置奖励 |
 |  orderId  | String  | 推啊订单号 |               每次奖励上报唯一，幂等由媒体保障               |
 |  appKey   | String  |  媒体公钥  |               用于签名验证，在推啊媒体平台获取               |
 |   sign    | String  |    签名    | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
@@ -232,8 +245,13 @@ webSetting.setJavaScriptEnabled(true);
    接口要求如下表
 
 3. 进行`奖励发放`
+	
+	需要媒体开发 *客户端监听页面关闭请求，媒体发放奖励* 的业务逻辑
+	
+4. 支持下载和安装，参考 WebView要求。
+5. 如需对接关闭按钮，参考 `H5前端上报` 或者 `客户端上报` 中关闭的部分
 
-   需要媒体开发 *客户端监听页面关闭请求，媒体发放奖励* 的业务逻辑
+    
 
 **接口说明**
 
@@ -255,7 +273,7 @@ webSetting.setJavaScriptEnabled(true);
 | :-------: | :-----: | :--: | :----------: | :----------------------------------------------------------: |
 |  userId   | String  |  是  |    用户id    | 奖励发放的对象，来源于广告位链接中的 &userId=xxx，由媒体拼接提供 |
 | timestamp |  Long   |  是  | 时间戳 |       毫秒                                                       |
-| prizeFlag | String  |  是  |   奖励标识   | 用于区分发放的奖励，由媒体定义奖励标识，并同步给推啊运营配置奖励 |
+| prizeFlag | String  |  是  |   奖励标识   | 默认 "default"。如果媒体需要发放多种奖励，可以根据奖励类型定义不同的奖励标识，并同步给推啊运营配置奖励 |
 |  orderId  | String  |  是  |  推啊订单号  |               每次奖励上报唯一，幂等由媒体保障               |
 |  appKey   | String  |  是  |   媒体公钥   |               用于签名验证，在推啊媒体平台获取               |
 |   sign    | String  |  是  |     签名     | 通过签名验证保障接口调用安全性。签名的生成及验证参考《签名验证》章节。 |
@@ -548,3 +566,4 @@ ok
 **Q: 激励视频需要媒体上报曝光点击数据吗**
 
 *A: 不需要，由我们自行上报*
+
