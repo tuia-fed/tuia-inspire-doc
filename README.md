@@ -97,7 +97,7 @@
 
 1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件。
 
-    https://yun.duiba.com.cn/h5-mami/inspire/v1.1/inspire.min.js
+    https://yun.duiba.com.cn/h5-mami/inspire/v1.2/inspire.min.js
 
 2. 通过 init 接口初始化
     如果需要使用 JS 的方法，使用的页面必须先初始化，否则将无法调用（请使用合法的有效参数）
@@ -109,7 +109,7 @@
       userId: '123456',
       rewardCallback: reward,
       closeCallback: close,
-      debug: false,
+      debug: false
     })
     ```
 | 参数名 | 必填 | 类型   | 示例值    | 描述               |
