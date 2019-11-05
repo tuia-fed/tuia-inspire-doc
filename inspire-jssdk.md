@@ -22,6 +22,7 @@ TAIsdk.init({
   userId: '123456',
   rewardCallback: reward,
   closeCallback: close,
+  extParams: {},
   debug: false,
 })
 ```
@@ -34,11 +35,28 @@ TAIsdk.init({
 | userId |  是  | string | '123456' | 媒体用户id，奖励发放的对象 |
 | rewardCallback |  是  | function | 略 | 上报成功后会执行的回调函数，会将对应上报数据传过来 |
 | closeCallback |  否  | function | 略 | 关闭页面后会执行的回调函数 |
+| extParams |  否  | object | {'_ext_mediaUnit': '123'} | 需要拼接在url上的额外参数（参数名前缀需要加_ext_） |
 | debug |  否  | boolean | false | 是否开启 debug 模式 |
 
 ### 三、展示活动
 
 在需要展示激励活动页面的时候，调用 TAIsdk.show()
+
+### 四、修改配置
+
+在需要修改url拼接规则里的参数的时候调用 TAIsdk.updataOpts(options)
+
+options支持以下几个参数，以对象的形式传入
+```javascript
+{
+  appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+  slotId: '299012',
+  deviceId: '867780021912345',
+  userId: '123456',
+  extParams: {'_ext_mediaUnit': '456'}
+}
+```
+调用完TAIsdk.updataOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
 
 ## 测试链接
 
