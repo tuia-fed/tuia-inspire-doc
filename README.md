@@ -93,11 +93,17 @@
 
 #### H5前端上报
 
+**JS-SDK更新记录**
+
+| 编号 |     修订内容      |  修订时间  | 版本 |
+| :--: | :---------------: | :--------: | :--: |
+|  1   |   支持媒体自定义参数 | 2019.11.05 | 1.21  |
+
 **对接流程**
 
 1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件。
 
-    https://yun.duiba.com.cn/h5-mami/inspire/v1.2/inspire.min.js
+    https://yun.duiba.com.cn/h5-mami/inspire/v1.21/inspire.min.js
 
 2. 通过 init 接口初始化
     如果需要使用 JS 的方法，使用的页面必须先初始化，否则将无法调用（请使用合法的有效参数）
@@ -109,6 +115,7 @@
       userId: '123456',
       rewardCallback: reward,
       closeCallback: close,
+      extParams: {},
       debug: false
     })
     ```
@@ -120,6 +127,7 @@
 | userId |  是  | string | '123456' | 媒体用户id，奖励发放的对象 |
 | rewardCallback |  是  | function |  | 上报成功后会执行的回调函数，会将对应上报数据传过来， |
 | closeCallback |  否  | function |  | 关闭页面后会执行的回调函数 |
+| extParams    |否 | object | {'_ext_mediaUnit': '123'} | 需要拼接在url上的额外参数（参数名前缀需要加_ext_）|
 | debug |  否  | boolean | false | 是否开启 debug 模式 |
 
 3. 奖励和关闭回调 function 实现
@@ -149,7 +157,23 @@
 |   sign    | String |     签名     | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
-5. 支持下载和安装，参考 ` WebView要求`。
+
+5. 修改配置(可选)
+> 在需要修改url拼接规则里的参数的时候调用 TAIsdk.updataOpts(options)
+
+options支持以下几个参数，以对象的形式传入
+```
+{
+  appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+  slotId: '299012',
+  deviceId: '867780021912345',
+  userId: '123456',
+  extParams: {'_ext_mediaUnit': '456'}
+}
+```
+调用完TAIsdk.updataOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
+
+6. 支持下载和安装，参考 ` WebView要求`。
 
 
 **测试链接**
