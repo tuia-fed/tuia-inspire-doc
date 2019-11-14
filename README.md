@@ -160,11 +160,11 @@
 
 4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
 
-5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updataOpts(options)
+5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
 
    ```javascript
    // options 支持以下几个参数，以对象的形式传入
-   // 调用完 TAIsdk.updataOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
+   // 调用完 TAIsdk.updateOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
    
    {
      appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
