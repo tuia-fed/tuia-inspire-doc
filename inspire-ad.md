@@ -7,15 +7,26 @@
 
 ### 一、引入 JS 文件
 
-在需要初始化 JS 的页面上引入如下 JS 文件，(支持 https): https://yun.duiba.com.cn/h5-mami/inspire/v1/inspire-ad.min.js
+在需要初始化 JS 的页面上引入如下 JS 文件，(支持 https): https://yun.duiba.com.cn/h5-mami/inspire/v1.1/inspire-ad.min.js
 
 ### 二、调用上报方法
 
-在需要上报的方法里，调用`window.TAIReward()`即可完成上报
+在需要上报的方法里，调用`window.TAIReward()`即可完成上报，并将需要上报的信息传入
 
 举例
 ```javascript
 document.querySelector('.reward').onclick = function() {
-  window.TAIReward()   
+  window.TAIReward(data)   
+}
+```
+
+### 三、调用关闭方法
+
+在需要主动关闭当前页面的场景下，调用`window.TAICloseWindow`即可
+
+举例
+```javascript
+document.querySelector('.close').onclick = function() {
+  window.TAICloseWindow()   
 }
 ```
