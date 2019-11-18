@@ -177,7 +177,7 @@
    }
    ```
 
-6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，具体新开webview的方法需沟通推啊技术添加。
+6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，具体新开webview的方法需沟通推啊技术添加。
 
 7. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
