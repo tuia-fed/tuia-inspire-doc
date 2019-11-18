@@ -97,13 +97,14 @@
 
 | 编号 | 修订内容           | 修订时间   | 版本 |
 | ---- | ------------------ | ---------- | ---- |
-| 1    | 支持媒体自定义参数 | 2019.11.05 | 1.21 |
+| 1    | 支持媒体自定义参数 | 2019.11.05 | 1.2.5 |
+| 2    | 支持自定义新开webview打开落地页 | 2019.11.18 | 1.3 |
 
 **对接流程**
 
 1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件
 
-   https://yun.duiba.com.cn/h5-mami/inspire/v1.2.5/inspire.min.js
+   https://yun.dui88.com/h5-mami/inspire/v1.3/inspire.min.js
 
 2. 通过 init 接口初始化。如果需要使用 JS 的方法，使用的页面必须先（使用合法的有效参数）初始化，否则将无法调用
 
@@ -175,7 +176,9 @@
    }
    ```
 
-6. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
+6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，具体新开webview的方法需沟通推啊技术添加。
+
+7. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 **测试链接**
 
