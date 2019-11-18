@@ -10,6 +10,7 @@
    * [第3步：生成签名](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第3步生成签名)
    * [第4步：拼接参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第4步拼接参数)
    * [第5步：活动链接拼接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第5步活动链接拼接)
+* [示例代码](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#示例代码)
 * [特别注意](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#特别注意)
 
 
@@ -21,9 +22,9 @@ API 对接是基于客户端集成的一种对接方式，对接方式简单快�
 
 推啊媒体 API 的对接方式简单便捷，对接后对媒体的广告填充、用户体验、媒体收益等环节会有很大提升，后续推啊会逐渐开放更多数据，用于对接媒体的商业化运营。 
 
-1.	广告填充更充分，投放更精准：通过流量端与广告端的设备号撞库，有效评估流量质量与偏好，解决广告主因担心流量质量和匹配度不敢投放的问题，广告主可以根据用户偏好推荐更加精准的广告，媒体的广告填充、投放、预算、出价以及转化环节会更好； 
-2.	用户体验更流畅：在活动和发券环节，通过设备号判断用户唯一性，降低活动和广告券的重复率，保证用户每次进入都有更好更新鲜的参与体验；  
-3.	推啊数据反哺：逐步向媒体开放用户在推啊链路上产生的行为数据、广告偏好等，帮助媒体构建用户画像，更深刻把握用户属性，用于媒体其他运营环节。
+1.	**广告填充更充分，投放更精准**：通过流量端与广告端的设备号匹配，有效评估流量质量与偏好，解决广告主因担心流量质量和匹配度不敢投放的问题，广告主可以根据用户偏好推荐更加精准的广告，媒体的广告填充、投放、预算、出价以及转化环节会更好； 
+2.	**用户体验更流畅**：在活动和发券环节，通过设备号判断用户唯一性，降低活动和广告券的重复率，保证用户每次进入都有更好更新鲜的参与体验；  
+3.	**推啊数据反哺**：逐步向媒体开放用户在推啊链路上产生的行为数据、广告偏好等，帮助媒体构建用户画像，更深刻把握用户属性，助力媒体其他运营环节。
 
 ## 对接流程
 1. 合作方媒体在推啊媒体平台（ https://ssp.tuia.cn ），注册账号；
@@ -64,17 +65,17 @@ API 对接是基于客户端集成的一种对接方式，对接方式简单快�
 
 | 字段名称         | 类型   | 说明                                                         | 是否必填 | 参考格式                                                     | 信息类型        |
 | ---------------- | ------ | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | --------------- |
-| imei             | string | Android 必填 TelephonyMana ger.getDeviceId()。 imei 号有3种格式：1. 15位纯数(极少数是14位); 2.  大写或⼩写的a开头的14位数字和字母混合字符(⼀般是⼤写的A开头); 3. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 868227022234384,  A00000610C10EF                             | 设备信息        |
-| idfa             | string | iOS 必填 idfa。 idfa 格式：1. 以 4 个"-"链接的数字和字母的混合字符; 2. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 8287B2C7-5037-4B6B-A8A3-8BBFE7CDD338                         | 设备信息        |
-| device_id        | string | 取 imei 或 idfa，如果都没有取用户唯⼀标识                    | 是       |                                                              |                 |
-| api_version      | string | 版本号，写死 1.0.0                                           | 是       | 1.0.0                                                        | API⽂档版本信息 |
-| advert_like_type | string | ⽤户历史偏好⼴告(类型)                                       | 否       | DMP标签，ec：电商类，loan：贷款类，game：传奇游戏...         | 用户信息        |
-| longitude        | string | GPS坐标经度                                                  | 否       | 118.78                                                       | 设备信息        |
-| latitude         | string | GPS坐标纬度                                                  | 否       | 32.04                                                        | 设备信息        |
-| os               | string | 操作系统标识： Android / iOS                                 | 否       | Android，iOS                                                 | 设备信息        |
-| page_title       | string | 页⾯标题                                                     | 否       | 保险也可以“分期”？巨头觊觎，现⾦贷转战，3万亿新“场景”被抢⾷  | 场景信息        |
-| nt               | string | 网络类型: wif i/3G/4G/2G                                     | 否       | wifi、4G、3G、2G                                             | 设备信息        |
-| apps             | string | app安装列表格式：以逗号分隔的每个非系统应⽤的app安装包包名（英⽂字符串） | 否       | com.ss.android.ugc.live,cn.v6.sixrooms,com.zt game.bob,com.nd.android.pandahome2 | 设备信息        |
+| imei             | String | Android 必填 TelephonyMana ger.getDeviceId()。 imei 号有3种格式：1. 15位纯数(极少数是14位); 2.  大写或⼩写的a开头的14位数字和字母混合字符(⼀般是⼤写的A开头); 3. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 868227022234384,  A00000610C10EF                             | 设备信息        |
+| idfa             | String | iOS 必填 idfa。 idfa 格式：1. 以 4 个"-"链接的数字和字母的混合字符; 2. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 8287B2C7-5037-4B6B-A8A3-8BBFE7CDD338                         | 设备信息        |
+| device_id        | String | 取 imei 或 idfa，如果都没有取用户唯⼀标识                    | 是       |                                                              |                 |
+| api_version      | String | 版本号，写死 1.0.0                                           | 是       | 1.0.0                                                        | API⽂档版本信息 |
+| advert_like_type | String | ⽤户历史偏好⼴告(类型)                                       | 否       | DMP标签，ec：电商类，loan：贷款类，game：传奇游戏...         | 用户信息        |
+| longitude        | String | GPS坐标经度                                                  | 否       | 118.78                                                       | 设备信息        |
+| latitude         | String | GPS坐标纬度                                                  | 否       | 32.04                                                        | 设备信息        |
+| os               | String | 操作系统标识： Android / iOS                                 | 否       | Android，iOS                                                 | 设备信息        |
+| page_title       | String | 页⾯标题                                                     | 否       | 保险也可以“分期”？巨头觊觎，现⾦贷转战，3万亿新“场景”被抢⾷  | 场景信息        |
+| nt               | String | 网络类型: wifi/3G/4G/2G                                      | 否       | wifi、4G、3G、2G                                             | 设备信息        |
+| apps             | String | app 安装列表格式：以逗号分隔的每个非系统应⽤的app安装包包名（英⽂字符串） | 否       | com.ss.android.ugc.live,cn.v6.sixrooms,com.zt game.bob,com.nd.android.pandahome2 | 设备信息        |
 
 
 
@@ -106,24 +107,24 @@ H4sIAAAAAAAAAGWQwWqDQBCG38VzXNR1TdJbDB5KKeSQ9lrGdTSDuiPrSgilj9Mn6DP1PbomFGp6/L7/
 
 **参数描述**
 
-|       字段        |  类型  | 必传 |                             注释                             |                             备注                             |
-| :---------------: | :----: | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|      appKey       | String |  是  |                           媒体公钥                           |                         投放链接自带                         |
-|     adslotId      |  Long  |  是  |                           广告位id                           |                         投放链接自带                         |
-|        md         | String |  是  | ⽤户设备信息处理后的参数，在url请求时需要urlencode避免特殊字符⽆法处理，⽤于签名时不需要进行urlencode |                                                              |
-|     timestamp     |  Long  |  是  |              时间戳，System.currentTimeMillis()              |                                                              |
-|       nonce       |  Long  |  是  |                   随机数（6位），不以0开头                   |                                                              |
-|     signature     | String |  是  |                         sha1 签名串                          | 签名算法见：[http://www.sha1- online.com/sha1- java/](http://www.sha1-online.com/sha1-java/) |
-|     device_id     | String |  是  |             用户设备ID，Andriod：imei；iOS：idfa             |                                                              |
+|   字段    |  类型  | 必传 |                             注释                             |                             备注                             |
+| :-------: | :----: | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  appKey   | String |  是  |                           媒体公钥                           |                         投放链接自带                         |
+| adslotId  |  Long  |  是  |                          广告位 id                           |                         投放链接自带                         |
+|    md     | String |  是  | ⽤户设备信息处理后的参数，在 url 请求时需要 urlencode 避免特殊字符⽆法处理，⽤于签名时不需要进行 urlencode |                                                              |
+| timestamp |  Long  |  是  |                         时间戳，毫秒                         |                  System.currentTimeMillis()                  |
+|   nonce   |  Long  |  是  |                   随机数（6位），不以0开头                   |                                                              |
+| signature | String |  是  |                         sha1 签名串                          | 签名算法见：[http://www.sha1- online.com/sha1- java/](http://www.sha1-online.com/sha1-java/) |
+| device_id | String |  是  |            用户设备 ID，Andriod：imei；iOS：idfa             |                                                              |
 
 **返回描述**
 
 | 字段              | 类型   |  注释             | 备注                                             |
 | ----------------- | ------ | ---- | ---------------- |
-| isimageUrl        | String | 参数选择：0和1   | 标识是否使用推啊在线素材，0表示不使用，1表示使用 |
-| imageUrl          | String |  素材url          |                                                  |
+| isimageUrl        | String | 参数选择：0 和 1 | 标识是否使用推啊在线素材，0 表示不使用，1 表示使用 |
+| imageUrl          | String |  素材 url         |                                                  |
 | activityUrl       | String |    广告位活动链接   |                                                  |
-| sckId             | Long   |    素材id           |                                                  |
+| sckId             | Long   |    素材 id          |                                                  |
 | reportExposureUrl | String |     素材曝光上报接口 |                                                  |
 | reportClickUrl    | String |   素材点击上报接口 |                                                  |
 | extTitle          | String |  素材标题         | 仅当广告位素材类型为图文时回传                   |
@@ -209,8 +210,85 @@ appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&device_id=868227022234384&user
 
 
 
+## 示例代码
+
+
+
+```java
+/**
+ * Copyright (c) 2019, duiba.com.cn All Rights Reserved.
+ */
+package com.ysoul.java.utils;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.URLEncoder;
+import java.util.Base64;
+import java.util.zip.GZIPOutputStream;
+
+/**
+ * 描述: 推啊广告位链接生成
+ *
+ * @version v1.0
+ * @auther guopengfei@duiba.com.cn
+ * @date 2019/7/22 09:42
+ */
+public class SlotUrlUtils {
+
+    public static void main(String[] args) throws IOException {
+
+        String appInfo = "{\"apps\":\"android,cn.coupon.kfc,cn.coupon.mac,cn.wps.moffice_eng,com.MobileTicket,com.UCMobile,com.alipay.security.mobile.authenticator,com.android.BBKClock,com.android.BBKCrontab,com.android.BBKPhoneInstructions,com.android.BBKTools,com.android.VideoPlayer,com.android.attachcamera,com.android.backupconfirm,com.android.bbk.lockscreen3\",\"gender\":\"⼥\",\"idfa\":\"AEBE52E7-03EE-455A-B3C4-E57283966239\",\"imei\":\"355065053311001\",\"latitude\":\"104.07642\",\"longitude\":\"38.6518\",\"nt\":\"wifi\"}";
+
+        String md = Base64.getEncoder().encodeToString(zip(appInfo.getBytes()));
+
+        System.out.println("加密后的md: " + URLEncoder.encode(md, "UTF-8"));
+
+        String appSecret = "3Xg4uQianykSwcopQ8ELzeG4qsm8CRYYqrcKGbn";
+
+        Long timestamp = System.currentTimeMillis();
+
+        String nonce = "123456";
+
+        String appKey = "3GQxGmKh7MwTkRojiFuRF2qPMYAn";
+
+        String slotId = "272367";
+
+        String signatureStr = "appSecret=" + appSecret + "&md=" + md + "&nonce=" + nonce + "&timestamp=" + timestamp;
+
+        String signature = DigestUtils.sha1Hex(signatureStr);
+
+        System.out.println("签名signature: " + DigestUtils.sha1Hex(signature));
+
+        System.out.println("最终链接: " + "https://engine.lvehaisen.com/index/serving?appKey=" + appKey + "&adslotId=" + slotId + "&md=" + URLEncoder.encode(md, "UTF-8") + "&signature=" + signature + "&timestamp=" + timestamp + "&nonce=" + nonce);
+    }
+
+    /**
+     * zip
+     *
+     * @param value
+     * @return byte[]
+     */
+    private static byte[] zip(byte[] value) throws IOException {
+        if (value == null || value.length == 0) {
+            return new byte[0];
+        }
+
+        try (ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+             GZIPOutputStream gzipOut = new GZIPOutputStream(byteOut)) {
+            gzipOut.write(value);
+            gzipOut.finish();
+            return byteOut.toByteArray();
+        }
+    }
+}
+```
+
+
+
 ## 特别注意
-不恰当使用推啊媒体接入API，若存在以下情况，则会被系统⾃动拦截和取消，影响媒体收⼊：
+不恰当使用推啊媒体接入 API，若存在以下情况，则会被系统⾃动拦截和取消，影响媒体收⼊：
 
 1.	服务器不要代理用户请求，所有请求都应该真实的用户行为；
 2.	规定的必填字段请正确传⼊，否则不会返回正确结果；

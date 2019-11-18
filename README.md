@@ -28,11 +28,11 @@
 
 ## 修订记录
 
-| 编号 |     修订内容      |  修订时间  | 版本 |
-| :--: | :---------------: | :--------: | :--: |
-|  1   |       初稿        | 2019.09.01 | 1.0  |
-|  2   | 简化媒体 API 对接 | 2019.09.25 | 1.1  |
-|  3   | 增加 JS-SDK 对接  | 2019.10.31 | 1.2  |
+| 编号 |        修订内容        |  修订时间  | 版本 |
+| :--: | :--------------------: | :--------: | :--: |
+|  1   |          初稿          | 2019.09.01 | 1.0  |
+|  2   |   简化媒体 API 对接    | 2019.09.25 | 1.1  |
+|  3   | H5 前端上报改为 JS-SDK | 2019.11.05 | 2.0  |
 
 
 
@@ -93,58 +93,60 @@
 
 #### H5前端上报
 
-**JS-SDK更新记录**
+**JS-SDK 更新记录**
 
-| 编号 |     修订内容      |  修订时间  | 版本 |
-| :--: | :---------------: | :--------: | :--: |
-|  1   |   支持媒体自定义参数 | 2019.11.05 | 1.21  |
+| 编号 | 修订内容           | 修订时间   | 版本 |
+| ---- | ------------------ | ---------- | ---- |
+| 1    | 支持媒体自定义参数 | 2019.11.05 | 1.21 |
 
 **对接流程**
 
-1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件。
+1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件
 
-    https://yun.duiba.com.cn/h5-mami/inspire/v1.21/inspire.min.js
+   https://yun.duiba.com.cn/h5-mami/inspire/v1.2.5/inspire.min.js
 
-2. 通过 init 接口初始化
-    如果需要使用 JS 的方法，使用的页面必须先初始化，否则将无法调用（请使用合法的有效参数）
-    ```javascript
-    TAIsdk.init({
-      appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
-      slotId: '299012',
-      deviceId: '867780021912345',
-      userId: '123456',
-      rewardCallback: reward,
-      closeCallback: close,
-      extParams: {},
-      debug: false
-    })
-    ```
-| 参数名 | 必填 | 类型   | 示例值    | 描述               |
-| ------ | :--: | ------ | --------- | ------------------ |
-| appKey |  是  | string | 'kEzAJT4iRMMag29Z7yWcJGfcVgG' | 系统分配 （推啊后台-我的媒体 获取appkey） |
-| slotId |  是  | string | '299012' | 系统分配的广告位Id （ 推啊后台-我的广告位 获取 slotId） |
-| deviceId |  是  | string | '867780021912345' | 设备信息，用于识别用户，提高广告精准投放度，获取不到 IMEI/IDFA 可以传媒体自定义的参数 |
-| userId |  是  | string | '123456' | 媒体用户id，奖励发放的对象 |
-| rewardCallback |  是  | function |  | 上报成功后会执行的回调函数，会将对应上报数据传过来， |
-| closeCallback |  否  | function |  | 关闭页面后会执行的回调函数 |
-| extParams    |否 | object | {'_ext_mediaUnit': '123'} | 需要拼接在url上的额外参数（参数名前缀需要加_ext_）|
-| debug |  否  | boolean | false | 是否开启 debug 模式 |
+2. 通过 init 接口初始化。如果需要使用 JS 的方法，使用的页面必须先（使用合法的有效参数）初始化，否则将无法调用
+
+   ```javascript
+   TAIsdk.init({
+     appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+     slotId: '299012',
+     deviceId: '867780021912345',
+     userId: '123456',
+     rewardCallback: reward,
+     closeCallback: close,
+     extParams: {},
+     debug: false
+   })
+   ```
+
+|     参数名     | 必填 |   类型   |            示例值             |                             描述                             |
+| :------------: | :--: | :------: | :---------------------------: | :----------------------------------------------------------: |
+|     appKey     |  是  |  string  | 'kEzAJT4iRMMag29Z7yWcJGfcVgG' |          系统分配 （推啊后台-我的媒体 获取appkey）           |
+|     slotId     |  是  |  string  |           '299012'            |   系统分配的广告位Id （ 推啊后台-我的广告位 获取 slotId）    |
+|    deviceId    |  是  |  string  |       '867780021912345'       | 设备信息，用于识别用户，提高广告精准投放度，获取不到 IMEI/IDFA 可以传媒体自定义的参数 |
+|     userId     |  是  |  string  |           '123456'            |                 媒体用户 id，奖励发放的对象                  |
+| rewardCallback |  是  | function |                               |       上报成功后会执行的回调函数，会将对应上报数据回传       |
+| closeCallback  |  否  | function |                               |                  关闭页面后会执行的回调函数                  |
+|   extParams    |  否  |  object  |   {'_ext_mediaUnit': '123'}   |    需要拼接在 url 上的额外参数（参数名前缀需要加`_ext_`）    |
+|     debug      |  否  | boolean  |             false             |                     是否开启 debug 模式                      |
+
 
 3. 奖励和关闭回调 function 实现
 
-  ```javascript
-  rewardCallback: function(res) {
-      console.log(res)
-      console.log('奖励上报回调')
-      // TODO 奖励上报逻辑
-  },
-  closeCallback: function() {
-      console.log('关闭回调')
-      // TODO 页面关闭逻辑
-  }
-  ```
-  
-  res 是一个 Object 包含以下参数：
+   ```javascript
+   rewardCallback: function(res) {
+       console.log(res)
+       console.log('奖励上报回调')
+       // TODO 奖励上报逻辑
+   },
+   closeCallback: function() {
+       console.log('关闭回调')
+       // TODO 页面关闭逻辑
+   }
+   ```
+
+   res 是一个 Object 包含以下参数
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
@@ -158,23 +160,22 @@
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
 
-5. 修改配置(可选)
-> 在需要修改url拼接规则里的参数的时候调用 TAIsdk.updataOpts(options)
+5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
 
-options支持以下几个参数，以对象的形式传入
-```
-{
-  appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
-  slotId: '299012',
-  deviceId: '867780021912345',
-  userId: '123456',
-  extParams: {'_ext_mediaUnit': '456'}
-}
-```
-调用完TAIsdk.updataOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
+   ```javascript
+   // options 支持以下几个参数，以对象的形式传入
+   // 调用完 TAIsdk.updateOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
+   
+   {
+     appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+     slotId: '299012',
+     deviceId: '867780021912345',
+     userId: '123456',
+     extParams: {'_ext_mediaUnit': '456'}
+   }
+   ```
 
-6. 支持下载和安装，参考 ` WebView要求`。
-
+6. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 **测试链接**
 
