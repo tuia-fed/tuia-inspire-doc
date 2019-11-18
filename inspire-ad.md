@@ -22,7 +22,7 @@ document.querySelector('.reward').onclick = function() {
 
 ### 三、调用关闭方法
 
-在需要主动关闭当前页面的场景下，调用`window.TAICloseWindow`即可
+在需要主动关闭当前页面的场景下，调用`window.TAICloseWindow()`即可
 
 举例
 ```javascript
