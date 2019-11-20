@@ -117,7 +117,8 @@
      rewardCallback: reward,
      closeCallback: close,
      extParams: {},
-     debug: false
+     debug: false,
+     newWebviewFn: newWebview
    })
    ```
 
@@ -131,6 +132,7 @@
 | closeCallback  |  否  | function |                               |                  关闭页面后会执行的回调函数                  |
 |   extParams    |  否  |  object  |   {'_ext_mediaUnit': '123'}   |    需要拼接在 url 上的额外参数（参数名前缀需要加`_ext_`）    |
 |     debug      |  否  | boolean  |             false             |                     是否开启 debug 模式                      |
+|  newWebviewFn  |  否  | function |                               |                     媒体app内新开webview的方法                |
 
 
 3. 奖励和关闭回调 function 实现
@@ -177,7 +179,16 @@
    }
    ```
 
-6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，具体新开webview的方法需沟通推啊技术添加。
+6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，在init的时候传入newWebviewFn字段，方法内接收一个参数为需要打开的网页url。
+
+```javascript
+ TAIsdk.init({
+    ...
+    newWebviewFn: function(url) {
+        window.media && window.media.openNewWebview(url)
+    }
+ })
+```
 
 7. 为了能更好的监控真实完成率，在完成上报发放给用户奖励后，调用`TAIsdk.rewardedLog()`方法发送监控数据。该方法可传一个参数，为布尔值，若上报发放给用户奖励的逻辑有出错的情况，调用`TAIsdk.rewardedLog(false)`，默认为true。
 
