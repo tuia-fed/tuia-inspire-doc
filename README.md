@@ -321,6 +321,10 @@ webSetting.setJavaScriptEnabled(true);
 
 奖励上报 2 秒超时无响应时，会进入重试补偿机制，重试间隔策略为 30s、60s、120s，重试次数为 3 次。
 
+**示例代码**
+
+[PHP](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/reward.php)
+
 
 
 #### 签名验证
