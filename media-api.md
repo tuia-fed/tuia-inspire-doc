@@ -212,7 +212,7 @@ appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&device_id=868227022234384&user
 
 ## 示例代码
 
-
+**Java**
 
 ```java
 /**
@@ -283,6 +283,35 @@ public class SlotUrlUtils {
         }
     }
 }
+```
+**PHP**
+
+```php
+<?php
+
+// 根据实际参数赋值
+$timestamp = time() * 1000;
+$nonce = "123456";
+$app_key = "3GQxGmKh7MwTkRojiFuRF2qPMYAn";
+$app_secret = "3Xg4uQianykSwcopQ8ELzeG4qsm8CRYYqrcKGbn";
+$slot_id = "272367";
+$app_info = "{\"apps\":\"android,cn.coupon.kfc,cn.coupon.mac,cn.wps.moffice_eng,com.MobileTicket,com.UCMobile,com.alipay.security.mobile.authenticator,com.android.BBKClock,com.android.BBKCrontab,com.android.BBKPhoneInstructions,com.android.BBKTools,com.android.VideoPlayer,com.android.attachcamera,com.android.backupconfirm,com.android.bbk.lockscreen3\",\"gender\":\"⼥\",\"idfa\":\"AEBE52E7-03EE-455A-B3C4-E57283966239\",\"imei\":\"355065053311001\",\"latitude\":\"104.07642\",\"longitude\":\"38.6518\",\"nt\":\"wifi\"}";
+
+// 对app信息进行gzip和base64
+$md = base64_encode(gzencode($app_info));
+//echo '加密后的md: '. urlencode($md);
+
+// sha1签名
+$signature_str = 'appSecret='.$app_secret.'&md='.$md.'&nonce='.$nonce.'&timestamp='.$timestamp;
+$signature = sha1($signature_str);
+
+// echo "签名signature: ".$signature;
+
+// 生成的最终链接
+$url = 'https://engine.lvehaisen.com/index/serving?appKey='.$app_key.'&adslotId='.$slot_id.'&md='.urlencode($md).'&signature='.$signature.'&timestamp='.$timestamp.'&nonce='.$nonce;
+header("Location: $url");
+
+?>
 ```
 
 
