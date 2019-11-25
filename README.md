@@ -74,8 +74,8 @@
 
 #### 对接文档
 
-[推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
-[推啊媒体API对接文档(无素材版)](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api-nosck.md)
+- [推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
+- [推啊媒体API对接文档(无素材版)](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api-nosck.md)
 
 
 
