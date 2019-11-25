@@ -161,26 +161,6 @@ H4sIAAAAAAAAA2WQXWuDUAyG/4vXctBZXdlle1XGoBfdbkeMsQ1qcjhGioz99/nBYHaX7/O8ISFfEXjf
 
 
 
-**广告位接口参数说明**
-
-|   参数    | 是否必填 |  类型  |                       描述                       |
-| :-------: | :------: | :----: | :----------------------------------------------: |
-|  appKey   |    是    | String |      合作方媒体标识，⼴告位 url 中原本携带       |
-| adslotId  |    是    |  Long  | ⼴告位 ID，在媒体平台创建，⼴告位 url 中原本携带 |
-| device_id |    是    | String |      用户设备 ID，Andriod：imei；iOS：idfa       |
-|  userId   |    是    | Stirng |                   用户唯一标识                   |
-
-注：device_id 和 userId 需要合作方拼接；device_id 在获取不到设备号的情况下，可以不填，但禁止以固定字符填充。
-
-
-
-广告位接口示例：
-```
-https://engine.lvehaisen.com/index/activity?appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&device_id=868227022234384&userId=123456
-```
-
-
-
 ### 第3步：生成签名
 
 签名是推啊服务器防止第三⽅恶意使⽤ API 以及保证⽤户设备信息安全进⾏脱敏处理的方式；根据 appSecret、md、timestamp、nonce ⽤ sha1 摘要算法⽣成，具体方法如下：
@@ -246,6 +226,8 @@ appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&md=H4sIAAAAAAAAAGWQwWqDQBCG38V
 ```
 注：素材曝光和点击上报时，一定要拼接上device_id；
 
+
+
 ###  第6步：活动链接拼接
 
 |   参数    | 是否必填 |  类型  |                 描述                 |
@@ -255,7 +237,7 @@ appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&md=H4sIAAAAAAAAAGWQwWqDQBCG38V
 | device_id |    是    | String | 用户设备ID，Andriod：imei；iOS：idfa |
 |  userId   |    是    | String |             用户唯一标识             |
 
-**注：device_id 和 userId 需要合作方拼接；device_id 在获取不到设备号的情况下，可以不填入数值或字符，但禁止以固定字符填充。**
+注：device_id 和 userId 需要合作方拼接；device_id 在获取不到设备号的情况下，可以不填入数值或字符，但禁止以固定字符填充。
 
 
 
