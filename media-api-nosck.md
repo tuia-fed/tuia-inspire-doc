@@ -9,8 +9,7 @@
    * [第2步：处理参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第2步处理参数)
    * [第3步：生成签名](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第3步生成签名)
    * [第4步：拼接参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第4步拼接参数)
-   * [第5步：上报素材曝光和点击](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第5步上报素材曝光和点击)
-   * [第6步：活动链接拼接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第6步活动链接拼接)
+   * [第5步：活动链接拼接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#第5步活动链接拼接)
 * [示例代码](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#示例代码)
 * [特别注意](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md#特别注意)
 
@@ -37,21 +36,14 @@ API 对接是基于客户端集成的一种对接方式，对接方式简单快�
 ## 对接原理
 开发者在推啊媒体平台（ https://ssp.tuia.cn ）获取的投放链接在媒体的⼴告位上⼀般为客户端直接集成（如有不同，请单独联系推啊技术），与推啊服务器的交互原理为下图所⽰：
 
-<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE2.png" alt="媒体API时序图" style="zoom: 80%;" />
+<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE.png" alt="媒体API时序图" style="zoom: 80%;" />
 
-**投放链接：**
+**说明：**
+
 1.	客户端获取用户设备信息并处理成参数；
 2.	合作方调用推啊的投放接口；
-3.	推啊返回素材 url 、活动链接、素材 id 以及曝光、点击上报接口；
-4.	合作方上报曝光日志。
-
-**广告位活动链接（参照上图）：**
-
-1.	客户端获取用户设备 ID；
-2.	将第1步中获取的信息按规范处理成参数，见接口参数；
-3.	合作方上报点击日志；
+3.	推啊返回的活动链接上拼接设备信息及用户 id；
 4.	客户端重定向加载推啊活动。
-
 
 ## 对接步骤
 
@@ -73,9 +65,8 @@ API 对接是基于客户端集成的一种对接方式，对接方式简单快�
 
 | 字段名称         | 类型   | 说明                                                         | 是否必填 | 参考格式                                                     | 信息类型        |
 | ---------------- | ------ | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | --------------- |
-| imei             | String | Android 必填 TelephonyMana ger.getDeviceId()。 imei 号有3种格式：1. 15位纯数(极少数是14位); 2.  大写或⼩写的 a 开头的14位数字和字母混合字符(⼀般是⼤写的 A 开头); 3. md5 加密形式，必须以小写32位的格式加密 | 是       | 868227022234384,  A00000610C10EF                             | 设备信息        |
+| imei             | String | Android 必填 TelephonyMana ger.getDeviceId()。 imei 号有3种格式：1. 15位纯数(极少数是14位); 2.  大写或⼩写的a开头的14位数字和字母混合字符(⼀般是⼤写的A开头); 3. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 868227022234384,  A00000610C10EF                             | 设备信息        |
 | idfa             | String | iOS 必填 idfa。 idfa 格式：1. 以 4 个"-"链接的数字和字母的混合字符; 2. md5 加密形式，要求：必须以小写32位的格式加密 | 是       | 8287B2C7-5037-4B6B-A8A3-8BBFE7CDD338                         | 设备信息        |
-| oaid             | String | Android Q 版本用户标识，格式要求：1. 以4个“_”链接的数字和字母的混合字符；2. md5 加密形式，必须以小写32位的格式加密 | 是       |                                                              | 设备信息        |
 | device_id        | String | 取 imei 或 idfa，如果都没有取用户唯⼀标识                    | 是       |                                                              |                 |
 | api_version      | String | 版本号，写死 1.0.0                                           | 是       | 1.0.0                                                        | API⽂档版本信息 |
 | advert_like_type | String | ⽤户历史偏好⼴告(类型)                                       | 否       | DMP标签，ec：电商类，loan：贷款类，game：传奇游戏...         | 用户信息        |
@@ -97,13 +88,13 @@ API 对接是基于客户端集成的一种对接方式，对接方式简单快�
 对接时把表格中的所有字段转换为 json 字符串，用 gzip 压缩，然后⽤ base64 编码［⾮常重要，请特别注意，base64 使⽤ NO_WRAP 格式，即 base64 后不会有换⾏］，把结果记为 md=$A。json 字符串样例：
 
 ```json
-{"apps":"android,cn.coupon.kfc,cn.coupon.mac,cn.wps.moffice_eng,com.MobileTicket,com.UCMobile,com.alipay.security.mobile.authenticator,com.android.BBKClock,com.android.BBKCrontab,com.android.BBKPhoneInstructions,com.android.BBKTools,com.android.VideoPlayer,com.android.attachcamera,com.android.backupconfirm,com.android.bbk.lockscreen3","imei":"355065053311001","latitude":"104.07642","longitude":"38.6518","nt":"wifi"}
+{"apps":"android,cn.coupon.kfc,cn.coupon.mac,cn.wps.moffice_eng,com.MobileTicket,com.UCMobile,com.alipay.security.mobile.authenticator,com.android.BBKClock,com.android.BBKCrontab,com.android.BBKPhoneInstructions,com.android.BBKTools,com.android.VideoPlayer,com.android.attachcamera,com.android.backupconfirm,com.android.bbk.lockscreen3","gender":"⼥","idfa":"AEBE52E7-03EE-455A-B3C4-E57283966239","imei":"355065053311001","latitude":"104.07642","longitude":"38.6518","nt":"wifi"}
 ```
 
 经过 gzip 压缩然后 Base64 编码后为：（请⽤自己代码测试，否则⽆法解析）
 
 ```
-H4sIAAAAAAAAA2WQXWuDUAyG/4vXctBZXdlle1XGoBfdbkeMsQ1qcjhGioz99/nBYHaX7/O8ISFfEXjfRy8RSBWUqxjFoQ5exTU1/kkdLOnue9dpXTPSJ8k1Ru3cm5bc0oWxIVvA+3FFS4CWPYyuJxwC2zhNz8rBYDcSYwTTsBbXC9zh8HpsFZt/MKgYlI/4fFOhk/QWBjRW6R8LF9V2Cz+4Ij23MNJ2M5gB3hA6CrARJWAzeFSpOXRbUzZuPrbHQCRZFEfcEU//zPI8KfIkz7I0TZJ0Ei0Y21DRJNNk55LnYvc0Y5XrL8/2rsjT/UTFpnjnmqPvHzkeqsOjAQAA
+H4sIAAAAAAAAAGWQwWqDQBCG38VzXNR1TdJbDB5KKeSQ9lrGdTSDuiPrSgilj9Mn6DP1PbomFGp6/L7/H2aY9w CGYQweAjCVZapW2gjN08BGtLX+Qz1c6TyMoue6Jo1vaJqV5l48c0kdHkm36K7iZX9TV4COBriIEfVkyV389BwJ mNwJjSMNju2teLtA5PnTvmPd/pOWjYPyXh9ObPDRjM5O2hGb8b5wZO6W8pUq5EMHF1xuBudAnzT0aGERlKDbad BsarL9MilbMR87aotoZLAKGjQVWv/R788vj1TV4GFX5IVKinUYyaIIU6V2YS73aViodbKR2yxL5HZu90i+LZWK MhUpKeM4imIfdODITRX6MI5SEa2zNJk1m+bXy43IVLzx1jiPZ6op+PgBGf3AE+ABAAA=
 ```
 
 
@@ -116,21 +107,21 @@ H4sIAAAAAAAAA2WQXWuDUAyG/4vXctBZXdlle1XGoBfdbkeMsQ1qcjhGioz99/nBYHaX7/O8ISFfEXjf
 
 **参数描述**
 
-|    字段    |  类型  | 必传 |                             注释                             |                             备注                             |
-| :--------: | :----: | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|   appKey   | String |  是  |                           媒体公钥                           |                         投放链接自带                         |
-|  adslotId  |  Long  |  是  |                          广告位 id                           |                         投放链接自带                         |
-|     md     | String |  是  | ⽤户设备信息处理后的参数，在 url 请求时需要 urlencode 避免特殊字符⽆法处理，⽤于签名时不需要进行 urlencode |                                                              |
-| timestamp  |  Long  |  是  |                         时间戳，毫秒                         |                  System.currentTimeMillis()                  |
-|   nonce    |  Long  |  是  |                   随机数（6位），不以0开头                   |                                                              |
-| signature  | String |  是  |                         sha1 签名串                          | 签名算法见：[http://www.sha1- online.com/sha1- java/](http://www.sha1-online.com/sha1-java/) |
-| device_id  | String |  是  |            用户设备 ID，Andriod：imei；iOS：idfa             |                                                              |
-| isimageUrl | String |  是  |           是否使用推啊在线素材：0. 不使用；1. 使用           |                                                              |
+|   字段    |  类型  | 必传 |                             注释                             |                             备注                             |
+| :-------: | :----: | :--: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  appKey   | String |  是  |                           媒体公钥                           |                         投放链接自带                         |
+| adslotId  |  Long  |  是  |                          广告位 id                           |                         投放链接自带                         |
+|    md     | String |  是  | ⽤户设备信息处理后的参数，在 url 请求时需要 urlencode 避免特殊字符⽆法处理，⽤于签名时不需要进行 urlencode |                                                              |
+| timestamp |  Long  |  是  |                         时间戳，毫秒                         |                  System.currentTimeMillis()                  |
+|   nonce   |  Long  |  是  |                   随机数（6位），不以0开头                   |                                                              |
+| signature | String |  是  |                         sha1 签名串                          | 签名算法见：[http://www.sha1- online.com/sha1- java/](http://www.sha1-online.com/sha1-java/) |
+| device_id | String |  是  |            用户设备 ID，Andriod：imei；iOS：idfa             |                                                              |
 
 **返回描述**
 
 | 字段              | 类型   |  注释             | 备注                                             |
 | ----------------- | ------ | ---- | ---------------- |
+| isimageUrl        | String | 参数选择：0 和 1 | 标识是否使用推啊在线素材，0 表示不使用，1 表示使用 |
 | imageUrl          | String |  素材 url         |                                                  |
 | activityUrl       | String |    广告位活动链接   |                                                  |
 | sckId             | Long   |    素材 id          |                                                  |
@@ -157,7 +148,7 @@ H4sIAAAAAAAAA2WQXWuDUAyG/4vXctBZXdlle1XGoBfdbkeMsQ1qcjhGioz99/nBYHaX7/O8ISFfEXjf
 }
 ```
 
-注：投放链接在“媒体后台”，新建广告位后可直接获取。
+**注：投放链接在“媒体后台”，新建广告位后可直接获取。**
 
 
 
@@ -183,7 +174,7 @@ signature 结果为 2c844779cea811c82ef 679d9caa91203a02fc9aa
 
 
 
-### 第4步：投放链接拼接
+### 第4步：拼接参数
 将投放接口及广告位接口拼接上对应参数，见接口参数；
 
 样例：
@@ -193,42 +184,11 @@ https://engine.lvehaisen.com/index/serving?
 appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&md=H4sIAAAAAAAAAGWQwWqDQBCG38VzXNR1TdJbDB5KKeSQ9lrGdTSDuiPrSgilj9Mn6DP1PbomFGp6%2FL7%2FH2aY9wCGYQweAjCVZapW2gjN08BGtLX%2BQz1c6TyMoue6Jo1vaJqV5l48c0kdHkm36K7iZX9TV4COBriIEfVkyV389BwJmNwJjSMNju2teLtA5PnTvmPd%2FpOWjYPyXh9ObPDRjM5O2hGb8b5wZO6W8pUq5EMHF1xuBudAnzT0aGERlKDbadBsarL9MilbMR87aotoZLAKGjQVWv%2FR788vj1TV4GFX5IVKinUYyaIIU6V2YS73aViodbKR2yxL5HZu90i%2BLZWKMhUpKeM4imIfdODITRX6MI5SEa2zNJk1m%2BbXy43IVLzx1jiPZ6op%2BPgBGf3AE%2BABAAA%3D&nonce=238232&timestamp=1513822109890&signature=2c844779cea811c82ef679d9caa91203a02fc9aa&isimageUrl=1
 ```
 
-通过这个投放链接获取到活动链接后，按照第6步的参数进行拼接。
+通过这个投放链接获取到活动链接后，按照第5步的参数进行拼接。
 
 
 
-###  第5步：上报素材曝光和点击
-
-**接口说明**
-
-|                      接口链接                      | 请求方式 |
-| :------------------------------------------------: | :------: |
-| 由投放接口返回，reportClickUrl / reportExposureUrl |   GET    |
-
-**参数描述**
-
-|   字段    |  类型   | 必传 |                          注释                          |   备注   |
-| :-------: | :-----: | :--: | :----------------------------------------------------: | :------: |
-|  appKey   | String  |  是  |                                                        | 接口自带 |
-| adslotId  |  Long   |  是  |                        广告位id                        | 接口自带 |
-|  logType  | Integer |  是  |               日志类型：0. 曝光，1. 点击               | 接口自带 |
-|   sckId   |  Long   |  是  |                        素材 id                         | 接口自带 |
-| device_id | String  |  是  |         用户设备 ID，Andriod：imei；iOS：idfa          |          |
-| extParams | String  |  否  | 用于合作方其他需要上报的参数，处理成json字符串格式回传 |          |
-
-**返回示例**
-```json
-{
-    "code": "0",
-    "desc": "成功",
-    "data": null
-}
-```
-注：素材曝光和点击上报时，一定要拼接上device_id；
-
-
-
-###  第6步：活动链接拼接
+###  第5步：活动链接拼接
 
 |   参数    | 是否必填 |  类型  |                 描述                 |
 | :-------: | :------: | :----: | :----------------------------------: |
@@ -237,7 +197,7 @@ appKey=3FBAWvDmqkhCdBfbjCXcVHBdVZg7&adslotId=9529&md=H4sIAAAAAAAAAGWQwWqDQBCG38V
 | device_id |    是    | String | 用户设备ID，Andriod：imei；iOS：idfa |
 |  userId   |    是    | String |             用户唯一标识             |
 
-注：device_id 和 userId 需要合作方拼接；device_id 在获取不到设备号的情况下，可以不填入数值或字符，但禁止以固定字符填充。
+**注：device_id 和 userId 需要合作方拼接；device_id 在获取不到设备号的情况下，可以不填入数值或字符，但禁止以固定字符填充。**
 
 
 

@@ -28,11 +28,12 @@
 
 ## 修订记录
 
-| 编号 |        修订内容        |  修订时间  | 版本 |
-| :--: | :--------------------: | :--------: | :--: |
-|  1   |          初稿          | 2019.09.01 | 1.0  |
-|  2   |   简化媒体 API 对接    | 2019.09.25 | 1.1  |
-|  3   | H5 前端上报改为 JS-SDK | 2019.11.05 | 2.0  |
+| 编号 |            修订内容             |  修订时间  | 版本 |
+| :--: | :-----------------------------: | :--------: | :--: |
+|  1   |              初稿               | 2019.09.01 | 1.0  |
+|  2   |        简化媒体 API 对接        | 2019.09.25 | 1.1  |
+|  3   |     H5 前端上报改为 JS-SDK      | 2019.11.05 | 2.0  |
+|  4   | 媒体 API 增加素材曝光和点击上报 | 2019.11.25 | 2.1  |
 
 
 
@@ -70,12 +71,12 @@
 
 #### 时序图
 
-<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE.png" alt="推啊媒体API时序图" style="zoom: 80%;" />
+<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE2.png" alt="推啊媒体API时序图" style="zoom: 80%;" />
 
 #### 对接文档
 
-[推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
-
+- [推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
+- [推啊媒体API对接文档(无素材版)](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api-nosck.md)
 
 
 
@@ -295,6 +296,11 @@ webSetting.setJavaScriptEnabled(true);
 
     
 
+4. 支持下载和安装，参考 WebView 要求
+
+5. 如需对接关闭按钮，参考 `H5前端上报` 或者 `客户端上报` 中关闭的部分
+
+
 **接口说明**
 
 媒体根据要求开发接口，用户获得奖励后，推啊服务器会调用该接口给媒体上报奖励。
@@ -342,6 +348,10 @@ webSetting.setJavaScriptEnabled(true);
 **超时重试**
 
 奖励上报 2 秒超时无响应时，会进入重试补偿机制，重试间隔策略为 30s、60s、120s，重试次数为 3 次。
+
+**示例代码**
+
+[PHP](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/reward.php)
 
 
 
