@@ -136,7 +136,7 @@
 |   extParams    |  否  |  object  |   {'_ext_mediaUnit': '123'}   |    需要拼接在 url 上的额外参数（参数名前缀需要加`_ext_`）    |
 |     debug      |  否  | boolean  |             false             |                     是否开启 debug 模式                      |
 |  newWebviewFn  |  否  | function |                               |                     媒体app内新开webview的方法                |
-| imageCallback | 否 | function | | 广告位素材回调，通过此方法拿到广告位素材，可以给活动后端发送广告位的曝光和点击日志 |
+| imageCallback | 否 | function | | 广告位素材回调，通过此方法拿到广告位素材，可以将素材的曝光和点击数据回传给推啊，在推啊的媒体后台中可以查看完整链路数据 |
 
 3. 回调函数实现
 
@@ -174,9 +174,9 @@
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 
     素材回调res，可以通过res.data.imageUrl获取素材链接；
-    如果对接方法中传了素材回调函数imageCallback，则可以通过回调方法拿到广告位配置的素材，进行渲染，可以通过TAIsdk.imageExposure()方法向活动后端发送广告位的曝光日志；
+    如果对接方法中传了素材回调函数imageCallback，则可以拿到广告位配置的素材进行渲染，调用TAIsdk.imageExposure()方法可以将素材的曝光数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
 
-4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()；此时如果素材回调函数imageCallback存在，且成功拿到了素材相关数据，可以向活动后端发送广告位点击日志；
+4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()；此时如果素材回调函数imageCallback存在，且成功拿到了素材相关数据，可以将素材的点击数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
 
 5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
 
