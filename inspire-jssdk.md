@@ -24,6 +24,7 @@ TAIsdk.init({
   closeCallback: close,
   extParams: {},
   debug: false,
+  imageCallback: imageCallback
 })
 ```
 
@@ -37,10 +38,12 @@ TAIsdk.init({
 | closeCallback |  否  | function | 略 | 关闭页面后会执行的回调函数 |
 | extParams |  否  | object | {'_ext_mediaUnit': '123'} | 需要拼接在url上的额外参数（参数名前缀需要加_ext_） |
 | debug |  否  | boolean | false | 是否开启 debug 模式 |
+| imageCallback | 否 | function | | 广告位素材回调，通过此方法将广告位素材传给媒体，活动后端可以记录素材的曝光和点击 |
 
 ### 三、展示活动
 
-在需要展示激励活动页面的时候，调用 TAIsdk.show()
+在需要展示激励活动页面的时候，调用 TAIsdk.show()；
+如果媒体有传imageCallback，且获取相关数据成功，媒体可以通过调用TAIsdk.imageExposure()方法，向活动后端发送素材的曝光日志，打开活动的时候会发送广告位素材点击埋点；
 
 ### 四、修改配置
 
@@ -49,8 +52,9 @@ TAIsdk.init({
 options支持以下几个参数，以对象的形式传入
 ```javascript
 {
-  appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
-  slotId: '299012',
+  // 同一个广告位不能修改appkey和广告位id
+  // appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
+  // slotId: '299012',
   deviceId: '867780021912345',
   userId: '123456',
   extParams: {'_ext_mediaUnit': '456'}

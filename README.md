@@ -100,6 +100,7 @@
 | ---- | ------------------ | ---------- | ---- |
 | 1    | 支持媒体自定义参数 | 2019.11.05 | 1.2.5 |
 | 2    | 支持自定义新开webview打开落地页 | 2019.11.18 | 1.3 |
+| 3    | 支持回传素材链接 | 20191127 | 1.3 |
 
 **对接流程**
 
@@ -119,7 +120,8 @@
      closeCallback: close,
      extParams: {},
      debug: false,
-     newWebviewFn: newWebview
+     newWebviewFn: newWebview,
+     imageCallback: imageCallback
    })
    ```
 
@@ -134,23 +136,31 @@
 |   extParams    |  否  |  object  |   {'_ext_mediaUnit': '123'}   |    需要拼接在 url 上的额外参数（参数名前缀需要加`_ext_`）    |
 |     debug      |  否  | boolean  |             false             |                     是否开启 debug 模式                      |
 |  newWebviewFn  |  否  | function |                               |                     媒体app内新开webview的方法                |
+| imageCallback | 否 | function | | 广告位素材回调，通过此方法拿到广告位素材，可以给活动后端发送广告位的曝光和点击日志 |
 
-
-3. 奖励和关闭回调 function 实现
+3. 回调函数实现
 
    ```javascript
+   // 奖励上报
    rewardCallback: function(res) {
        console.log(res)
        console.log('奖励上报回调')
        // TODO 奖励上报逻辑
    },
+   // 页面关闭
    closeCallback: function() {
        console.log('关闭回调')
        // TODO 页面关闭逻辑
+   },
+   // 素材回传
+   imageCallback: function(res) {
+       console.log(res)
+       console.log('获取素材数据成功')
+       // TODO 素材渲染等
    }
    ```
 
-   res 是一个 Object 包含以下参数
+   奖励上报res 是一个 Object 包含以下参数
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
@@ -163,14 +173,17 @@
 |   sign    | String |     签名     | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 
-4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
+    素材回调res，可以通过res.data.imageUrl获取素材链接；
+    如果对接方法中传了素材回调函数imageCallback，则可以通过回调方法拿到广告位配置的素材，进行渲染，可以通过TAIsdk.imageExposure()方法向活动后端发送广告位的曝光日志；
+
+4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()；此时如果素材回调函数imageCallback存在，且成功拿到了素材相关数据，可以向活动后端发送广告位点击日志；
 
 5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
 
    ```javascript
    // options 支持以下几个参数，以对象的形式传入
    // 调用完 TAIsdk.updateOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
-   
+
    {
      appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
      slotId: '299012',
@@ -219,16 +232,16 @@ http://yun.dui88.com/h5-mami/inspire/test/index.html
 
 1. 媒体需要在 WebView 内实现 native 方法
    - Android 客户端
-     
+
      `window.TAHandler.reward`: 发放奖励用，会在奖励发放时调用该接口。
-     
+
      `window.TAHandler.close` : 关闭页面用，会在用户点击离开时调用该接口。
    - iOS 客户端
-     
+
      `window.TAHandlerReward` : 发放奖励用，会在奖励发放时调用该接口。
-     
+
      `window.TAHandlerClose` : 关闭页面用，会在用户点击离开时调用该接口。
-2. 媒体需要提供奖励标识 (prizeFlag) 
+2. 媒体需要提供奖励标识 (prizeFlag)
 3. 如有需要返回按钮需求，前端在调用 `window.TAHandler.close` 或 `window.TAHandlerClose` 的时候关闭 WebView
 
 **参数说明**
@@ -288,13 +301,13 @@ webSetting.setJavaScriptEnabled(true);
    接口要求如下表
 
 3. 进行`奖励发放`
-	
+
 	需要媒体开发 *客户端监听页面关闭请求，媒体发放奖励* 的业务逻辑
-	
+
 4. 支持下载和安装，参考 WebView要求。
 5. 如需对接关闭按钮，参考 `H5前端上报` 或者 `客户端上报` 中关闭的部分
 
-    
+
 
 4. 支持下载和安装，参考 WebView 要求
 
