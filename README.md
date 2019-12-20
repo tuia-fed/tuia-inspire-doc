@@ -97,13 +97,15 @@
 
 | 编号 | 修订内容           | 修订时间   | 版本 |
 | ---- | ------------------ | ---------- | ---- |
-| 1    | 支持媒体自定义参数 | 2019.11.05 | 1.21 |
+| 1    | 支持媒体自定义参数 | 2019.11.05 | 1.2.5 |
+| 2    | 支持自定义新开webview打开落地页 | 2019.11.18 | 1.3 |
+| 3    | 支持回传素材链接 | 20191127 | 1.3 |
 
 **对接流程**
 
 1. 确保 WebView 支持 ES5 语法，并且支持 iFrame。并在需要初始化 JS 的页面上引入如下 JS 文件
 
-   https://yun.duiba.com.cn/h5-mami/inspire/v1.2.7/inspire.min.js
+   https://yun.tuisnake.com/h5-mami/inspire/v1.3/inspire.min.js
 
 2. 通过 init 接口初始化。如果需要使用 JS 的方法，使用的页面必须先（使用合法的有效参数）初始化，否则将无法调用
 
@@ -116,7 +118,9 @@
      rewardCallback: reward,
      closeCallback: close,
      extParams: {},
-     debug: false
+     debug: false,
+     newWebviewFn: newWebview,
+     imageCallback: imageCallback
    })
    ```
 
@@ -130,23 +134,32 @@
 | closeCallback  |  否  | function |                               |                  关闭页面后会执行的回调函数                  |
 |   extParams    |  否  |  object  |   {'_ext_mediaUnit': '123'}   |    需要拼接在 url 上的额外参数（参数名前缀需要加`_ext_`）    |
 |     debug      |  否  | boolean  |             false             |                     是否开启 debug 模式                      |
+|  newWebviewFn  |  否  | function |                               |                     媒体app内新开webview的方法                |
+| imageCallback | 否 | function | | 广告位素材回调，通过此方法拿到广告位素材，可以将素材的曝光和点击数据回传给推啊，在推啊的媒体后台中可以查看完整链路数据 |
 
-
-3. 奖励和关闭回调 function 实现
+3. 回调函数实现
 
    ```javascript
+   // 奖励上报
    rewardCallback: function(res) {
        console.log(res)
        console.log('奖励上报回调')
        // TODO 奖励上报逻辑
    },
+   // 页面关闭
    closeCallback: function() {
        console.log('关闭回调')
        // TODO 页面关闭逻辑
+   },
+   // 素材回传
+   imageCallback: function(res) {
+       console.log(res)
+       console.log('获取素材数据成功')
+       // TODO 素材渲染等
    }
    ```
 
-   res 是一个 Object 包含以下参数
+   奖励上报res 是一个 Object 包含以下参数
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
@@ -159,16 +172,18 @@
 |   sign    | String |     签名     | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 
-4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
+    素材回调res，可以通过res.data.imageUrl获取素材链接；
+    如果对接方法中传了素材回调函数imageCallback，则可以拿到广告位配置的素材进行渲染，调用TAIsdk.imageExposure()方法可以将素材的曝光数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
+
+4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()；此时如果素材回调函数imageCallback存在，且成功拿到了素材相关数据，可以将素材的点击数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
 
 5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
 
    ```javascript
    // options 支持以下几个参数，以对象的形式传入
    // 调用完 TAIsdk.updateOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
-   
+
    {
-     appKey: 'kEzAJT4iRMMag29Z7yWcJGfcVgG',
      slotId: '299012',
      deviceId: '867780021912345',
      userId: '123456',
@@ -176,7 +191,20 @@
    }
    ```
 
-6. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
+6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，在init的时候传入newWebviewFn字段，方法内接收一个参数为需要打开的网页url。
+
+```javascript
+ TAIsdk.init({
+    ...
+    newWebviewFn: function(url) {
+        window.media && window.media.openNewWebview(url)
+    }
+ })
+```
+
+7. 为了能更好的监控真实完成率，在完成上报发放给用户奖励后，调用`TAIsdk.rewardedLog()`方法发送监控数据。该方法可传一个参数，为布尔值，若上报发放给用户奖励的逻辑有出错的情况，调用`TAIsdk.rewardedLog(false)`，默认为true。
+
+8. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 **测试链接**
 
