@@ -4,26 +4,14 @@
 * [产品介绍](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#产品介绍)
 * [对接流程](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#对接流程)
 * [技术对接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#技术对接)
-   * [用户标识接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#用户标识接口)
-      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#接口概述)
-      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#时序图)
-      * [对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#对接文档)
-   * [奖励上报接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#奖励上报接口)
-      * [接口概述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#接口概述-1)
-      * [时序图](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#时序图-1)
-      * [H5前端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#H5前端上报)
-      * [客户端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#客户端上报)
-      * [服务端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#服务端上报)
-      * [签名验证](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#签名验证)
+   * [H5前端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#H5前端上报)
+   * [客户端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#客户端上报)
+   * [服务端上报](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#服务端上报)
+   * [签名验证](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#签名验证)
    * [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
-      * [WebView 基础配置](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-基础配置)
-      * [监听 WebView 下载接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#监听-webview-下载接口)
-      * [实现下载行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#实现下载行为)
-      * [实现安装行为](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#实现安装行为)
-   * [异常场景查询](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#异常场景查询)
-      * [可用视频查询接口](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#可用视频查询接口)
 * [上线准备](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#上线准备)
 * [常见问题](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#常见问题)
+
 
 
 ## 修订记录
@@ -34,6 +22,7 @@
 |  2   |        简化媒体 API 对接        | 2019.09.25 | 1.1  |
 |  3   |     H5 前端上报改为 JS-SDK      | 2019.11.05 | 2.0  |
 |  4   | 媒体 API 增加素材曝光和点击上报 | 2019.11.25 | 2.1  |
+|  5   |          文档结构调整           | 2019.12.24 | 2.2  |
 
 
 
@@ -49,6 +38,7 @@
 
 <img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A-%E6%8A%95%E6%94%BE%E6%96%B9%E5%BC%8F.png" alt="激励广告-投放方式" style="zoom:70%;" />
 
+
 ## 对接流程
 
 1. 合作方媒体在推啊媒体平台 (https://ssp.tuia.cn) 注册账号
@@ -58,48 +48,22 @@
 5. 测试联调，上线准备
 6. 上线运营，之后可以登录推啊媒体平台查看数据
 
+
+
 ## 技术对接
 
-<img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E5%AF%B9%E6%8E%A5%E7%AE%80%E6%98%93%E8%AF%B4%E6%98%8E-2.png" alt="激励广告对接简易说明" style="zoom:80%;" />
-
-### 用户标识接口
-
-#### 接口概述
-
-用于推啊识别用户，并在奖励上报时回传，作为奖励发放的对象。
-
-#### 时序图
-
-<img src="http://storage.ikyxxs.com/%E5%AA%92%E4%BD%93API%E6%97%B6%E5%BA%8F%E5%9B%BE2.png" alt="推啊媒体API时序图" style="zoom: 80%;" />
-
-#### 对接文档
-
-- [推啊媒体API对接文档](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
-- [推啊媒体API对接文档(无素材版)](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api-nosck.md)
-
-
-
-### 奖励上报接口
-
-#### 接口概述
-
-用户参与活动获得奖励时，推啊会将奖励上报给媒体，用于媒体后续给用户实际发放奖励。
-
-奖励上报需要媒体根据上报类型开发相应的接口。
-
-#### 时序图
+用户参与活动获得奖励时，推啊会将奖励上报给媒体，用于媒体后续给用户实际发放奖励。前端上报、客户端上报和服务端上报，媒体可以根据实际场景可以选其中一种方式对接。
 
 <img src="http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E4%BA%92%E5%8A%A8%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg" alt="激励互动时序图" style="zoom:70%;" />
 
-#### H5前端上报
+### H5前端上报
 
 **JS-SDK 更新记录**
 
 | 编号 | 修订内容           | 修订时间   | 版本 |
 | ---- | ------------------ | ---------- | ---- |
 | 1    | 支持媒体自定义参数 | 2019.11.05 | 1.2.5 |
-| 2    | 支持自定义新开webview打开落地页 | 2019.11.18 | 1.3 |
-| 3    | 支持回传素材链接 | 20191127 | 1.3 |
+| 2    | 支持自定义新开 WebView 打开落地页，支持回传素材链接 | 2019.11.27 | 1.3 |
 
 **对接流程**
 
@@ -159,7 +123,7 @@
    }
    ```
 
-   奖励上报res 是一个 Object 包含以下参数
+   奖励上报 res 是一个 Object 包含以下参数
 
 |   参数    |  类型  |     注释     |                             备注                             |
 | :-------: | :----: | :----------: | :----------------------------------------------------------: |
@@ -172,17 +136,19 @@
 |   sign    | String |     签名     | 通过签名验证保障接口调用安全性，签名验证需要媒体后端开发。签名的生成及验证参考《签名验证》章节。 |
 |   score   | Number |   奖励倍数   |            翻倍奖励会回传该参数表示用户获得的倍数            |
 
-    素材回调res，可以通过res.data.imageUrl获取素材链接；
-    如果对接方法中传了素材回调函数imageCallback，则可以拿到广告位配置的素材进行渲染，调用TAIsdk.imageExposure()方法可以将素材的曝光数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
 
-4. 在需要展示激励活动页面的时候，调用 TAIsdk.show()；此时如果素材回调函数imageCallback存在，且成功拿到了素材相关数据，可以将素材的点击数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
+4. （可选）素材回调 res，可以通过 res.data.imageUrl 获取素材链接；如果对接方法中传了素材回调函数 imageCallback，则可以拿到广告位配置的素材进行渲染，调用 TAIsdk.imageExposure() 方法可以将素材的曝光数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
 
-5. （可选）在需要修改 url 拼接规则里的参数的时候调用 TAIsdk.updateOpts(options)
+5. 在需要展示激励活动页面的时候，调用 TAIsdk.show()
+
+   此时如果素材回调函数 imageCallback 存在，且成功拿到了素材相关数据，可以将素材的点击数据回传给推啊，在推啊的媒体后台中查看完整链路数据；
+
+6. （可选）在需要修改参数的时候调用 TAIsdk.updateOpts(options)
 
    ```javascript
    // options 支持以下几个参数，以对象的形式传入
    // 调用完 TAIsdk.updateOpts(options)，再调用 TAIsdk.show() 即可重新展示激励活动页面。
-
+   
    {
      slotId: '299012',
      deviceId: '867780021912345',
@@ -191,7 +157,7 @@
    }
    ```
 
-6. 由于某些少数落地页出于安全政策不允许在iframe下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开webview的形式打开落地页，在init的时候传入newWebviewFn字段，方法内接收一个参数为需要打开的网页url。
+7. （可选）由于某些少数落地页出于安全政策不允许在 iFrame 下打开，可能会造成活动跳转落地页空白的情况。为避免这种情况，可选择通过新开 WebView 的形式打开落地页，在 init 的时候传入 newWebviewFn 字段，方法内接收一个参数为需要打开的网页 url。
 
 ```javascript
  TAIsdk.init({
@@ -202,9 +168,9 @@
  })
 ```
 
-7. 为了能更好的监控真实完成率，在完成上报发放给用户奖励后，调用`TAIsdk.rewardedLog()`方法发送监控数据。该方法可传一个参数，为布尔值，若上报发放给用户奖励的逻辑有出错的情况，调用`TAIsdk.rewardedLog(false)`，默认为true。
+8. （可选）为了能更好的监控真实完成率，在完成上报发放给用户奖励后，调用 TAIsdk.rewardedLog() 方法发送监控数据。该方法可传一个参数，为布尔值，若上报发放给用户奖励的逻辑有出错的情况，调用 TAIsdk.rewardedLog(false) ，默认为true。
 
-8. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
+9. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 **测试链接**
 
@@ -212,35 +178,35 @@ http://yun.dui88.com/h5-mami/inspire/test/index.html
 
 
 
-#### 客户端上报
+### 客户端上报
 
 **对接流程**
 
-1. 对接`用户标识接口`
+1. 对接`用户标识接口`，[文档链接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
 
-2. 开发`奖励上报接口`
+2. 开发`奖励回调接口`，在 WebView 内实现 native 方法，具体见接口说明
 
-   在 WebView 内实现 native 方法
+3. 进行`奖励发放`，需要媒体开发 *「客户端监听页面关闭请求，媒体发放奖励」* 的业务逻辑
 
-3. 进行`奖励发放`
-
-   需要媒体开发 *客户端监听页面关闭请求，媒体发放奖励* 的业务逻辑
+4. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 **接口说明**
 
 1. 媒体需要在 WebView 内实现 native 方法
    - Android 客户端
      
-     `window.TAHandler.reward`: 发放奖励用，会在奖励发放时调用该接口。
-     
-     `window.TAHandler.close` : 关闭页面用，会在用户点击离开时调用该接口。
+      `window.TAHandler.reward`: 发放奖励用，会在奖励发放时调用该接口。
+      
+      `window.TAHandler.close` : 关闭页面用，会在用户点击离开时调用该接口。
+   
    - iOS 客户端
-     
-     `window.TAHandlerReward` : 发放奖励用，会在奖励发放时调用该接口。
-     
-     `window.TAHandlerClose` : 关闭页面用，会在用户点击离开时调用该接口。
-2. 媒体需要提供奖励标识(prizeFlag) 
-3. 如有需要返回按钮需求，前端在调用 `window.TAHandler.close` 或 `window.TAHandlerClose` 的时候关闭 webview
+   
+      `window.TAHandlerReward` : 发放奖励用，会在奖励发放时调用该接口。
+   
+      `window.TAHandlerClose` : 关闭页面用，会在用户点击离开时调用该接口。
+   
+2. （可选）媒体提供奖励标识 (prizeFlag) ，用于区分获得的是什么奖励
+3. 如需对接关闭按钮，收到 `window.TAHandler.close` 或 `window.TAHandlerClose` 回调的时候关闭 WebView
 
 **参数说明**
 
@@ -258,7 +224,7 @@ http://yun.dui88.com/h5-mami/inspire/test/index.html
 
 **测试活动**
 
-[活动链接](https://activity.tuia.cn/activity/index?id=15564&slotId=305733&login=normal&appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&dsm=1.305733.0.0&dsm2=1.305733.2.15564&tenter=SOW&subActivityWay=1&tck_rid_6c8=0ad0276bjzwmdbm0-7348142&tck_loc_c5d=tactivity-15564&dcm=401.305733.0.0&&tenter=SOW&specialType=0&userType=2&isTestActivityType=0&visType=0&ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc)
+[活动链接](https://activity.tuia.cn/activity/index?id=15564&slotId=305733&login=normal&appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&deviceId=test&subActivityWay=1&tck_rid_6c8=test&tck_loc_c5d=tactivity-15564&tenter=SOW) 将活动链接替换为这个，点击*直接上报*检查是否收到奖励回调。
 
 <img src="http://storage.ikyxxs.com/tuia-reward-test-activity.png" alt="tuia-reward-test-activity" style="zoom:50%;" />
 
@@ -282,27 +248,19 @@ webSetting.setJavaScriptEnabled(true);
 
 - [Android](https://github.com/tuia-fed/Tuia-h5-demo)
 
-- [前端对接](https://activity.tuia.cn/activity/index?id=15564&slotId=305733&login=normal&appKey=3zHqTHGuvNp13ckCto2LQiAfyGsi&deviceId=3ddb13cc-42cd-4720-8f9a-17de18de38bd&dsm=1.305733.0.0&dsm2=1.305733.2.15564&tenter=SOW&subActivityWay=1&tck_rid_6c8=0ad0276bjzwmdbm0-7348142&tck_loc_c5d=tactivity-15564&dcm=401.305733.0.0&&tenter=SOW&specialType=0&userType=2&isTestActivityType=0&visType=0&ipUaMd5=49d409192c1b7e9d8410f2c247d5ebcc&)
 
 
-
-
-
-#### 服务端上报
+### 服务端上报
 
 **对接流程**
 
-1. 对接`用户标识接口`
+1. 对接`用户标识接口`，[文档链接](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/media-api.md)
 
-2. 开发`奖励上报接口`
+2. 开发`奖励上报接口`，接口要求如下表
 
-   接口要求如下表
+3. 进行`奖励发放`，需要媒体开发 *「客户端监听页面关闭请求，媒体发放奖励」* 的业务逻辑
 
-3. 进行`奖励发放`
-
-   需要媒体开发 *客户端监听页面关闭请求，媒体发放奖励* 的业务逻辑
-
-4. 支持下载和安装，参考 WebView 要求
+4. WebView 需要支持下载和安装，参考 [WebView 要求](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/README.md#webview-要求)
 
 5. 如需对接关闭按钮，参考 `H5前端上报` 或者 `客户端上报` 中关闭的部分
 
@@ -361,7 +319,7 @@ webSetting.setJavaScriptEnabled(true);
 
 
 
-#### 签名验证
+### 签名验证
 
 为了保障接口调用的安全性，防止调用时参数被篡改，媒体接收到奖励上报时，需要先对接口的签名进行验证。以保证请求来自推啊合法的接口调用。
 
@@ -445,7 +403,7 @@ return false;
 
 ### WebView 要求
 
-#### WebView 基础配置
+**基础配置**
 
 ```java
 WebSettings webSetting = mWebView.getSettings();
@@ -474,7 +432,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 }
 ```
 
-#### 监听 WebView 下载接口
+**监听下载接口**
 
 ```java
 mWebView.setDownloadListener(new DownloadListener() {
@@ -484,15 +442,15 @@ mWebView.setDownloadListener(new DownloadListener() {
 });
 ```
 
-#### 实现下载行为
+**实现下载行为**
 
 参考 okdownload 下载框架或者自己实现下载器
 https://github.com/lingochamp/okdownload/blob/master/README-zh.md
 
-#### 实现安装行为
+**实现安装行为**
 
 `适配 Android 7.0 及以上`
-**新建 UpdateFileProvider 类继承 FileProvider**
+新建 UpdateFileProvider 类继承 FileProvider
 
 ```java
 public class UpdateFileProvider extends FileProvider {
@@ -500,7 +458,7 @@ public class UpdateFileProvider extends FileProvider {
 }
 ```
 
-**AndroidManifest.xml 配置 provider**
+AndroidManifest.xml 配置 provider
 ```xml
 <provider
           android:name="com.lechuan.midunovel.view.UpdateFileProvider"
@@ -512,7 +470,7 @@ public class UpdateFileProvider extends FileProvider {
              android:resource="@xml/update_cache_path"/>
 </provider>
 ```
-**在 xml 文件下新建 update_cache_path.xml**
+在 xml 文件下新建 update_cache_path.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -562,44 +520,13 @@ public static void openFile(Context mContext, File f) {
 
 
 
-### 异常场景查询
-
-#### 可用视频查询接口
-
-**接口描述**
-
-媒体用户是否有可用视频查询接口
-
-**请求URL**
-
-https://ecb.playpangu.com/video/fillAble
-
-**请求方式**
-
-GET
-
-**参数说明**
-
-|   参数   |  类型  | 必传 |      说明      |
-| :------: | :----: | :--: | :------------: |
-|  appKey  | String |  是  |     用户id     |
-|  slotId  |  Long  |  是  |   媒体广告位   |
-| deviceId | String |  是  | 用户的设备信息 |
-|  userId  | String |  否  |   用户在媒体的唯一识别信息   |
-|    ip    | String |  否  |     用户ip     |
-
-**响应说明**
-成功返回 ok, 失败无返回
-
-```
-ok
-```
-
 ## 上线准备
 
 - **激励广告上线对接表**
 
   [点击下载](http://storage.ikyxxs.com/%E6%BF%80%E5%8A%B1%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%BA%BF%E5%AF%B9%E6%8E%A5%E8%A1%A8.docx)，上线前至少提前半天给到推啊，用于奖励配置、素材准备等
+
+
 
 ## 常见问题
 
