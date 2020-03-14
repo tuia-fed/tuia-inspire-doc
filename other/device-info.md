@@ -1,6 +1,12 @@
 # 推啊设备信息接口文档
 
-[TOC]
+
+* [更新记录](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#更新记录)
+* [接口描述](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#接口描述)
+* [接口说明](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#接口说明)
+* [请求参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#请求参数)
+* [响应参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#响应参数)
+* [错误说明](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/device-info.md#错误说明)
 
 ## 更新记录
 
