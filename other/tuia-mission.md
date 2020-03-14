@@ -1,6 +1,12 @@
 # 推啊任务对接文档
 
-[TOC]
+* [更新记录](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#更新记录)
+* [对接说明](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#对接说明)
+* [透传参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#透传参数)
+* [接口说明](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#接口说明)
+* [请求参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#请求参数)
+* [响应参数](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#响应参数)
+* [错误说明](https://github.com/tuia-fed/tuia-inspire-doc/blob/master/other/tuia-mission.md#错误说明)
 
 ## 更新记录
 
