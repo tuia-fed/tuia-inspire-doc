@@ -31,7 +31,8 @@
 | :---------: | :----: | :------: | :------------------------: |
 |   appKey    | String |    是    | 媒体信息，媒体后台获取 |
 | mediaUserId | String |    是    | 媒体用户id |
-|       idfa      | String | iOS 必填 |  |
+|       idfa      | String | iOS 必填 | 广告标识符 |
+|       idfv      | String | iOS 必填 | 应用开发商标识符 |
 | imei | String | Android 必填 | Android 设备唯一标识码 |
 | oaid | String | Android Q 必填 | 匿名设备标识符 |
 | mac | String | 否 | Mac 地址 |
