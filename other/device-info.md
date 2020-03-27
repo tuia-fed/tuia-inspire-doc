@@ -35,6 +35,7 @@
 |       idfv      | String | iOS 必填 | 应用开发商标识符 |
 | imei | String | Android 必填 | Android 设备唯一标识码 |
 | oaid | String | Android Q 必填 | 匿名设备标识符 |
+| androidId | String | Android 必填 | Android 设备 ID |
 | mac | String | 否 | Mac 地址 |
 | osType | Integer | 是 | 操作系统类型 1- Android、2- iOS |
 | osVersion | String | 是 | 操作系统版本 |
